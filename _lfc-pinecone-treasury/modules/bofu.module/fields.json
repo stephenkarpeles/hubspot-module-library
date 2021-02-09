@@ -49,7 +49,8 @@
     "src" : "",
     "alt" : null,
     "loading" : "disabled"
-}, , {
+  }
+}, {
   "id" : "7728fe8e-91bc-20f2-ba05-9382b5cf9b46",
   "name" : "button_text",
   "label" : "Button Text",
@@ -110,29 +111,6 @@
   "display" : "select",
   "choices" : [ [ "solid", "Solid Color" ], [ "gradient", "Gradient" ], [ "image", "Image" ] ],
   "type" : "choice"
-}, {
-  "id" : "c2c91a06-a571-c454-0799-585dce45e08f",
-  "name" : "background_image",
-  "label" : "Background Image",
-  "required" : false,
-  "locked" : false,
-  "visibility" : {
-    "controlling_field" : "aba510a3-6405-5b11-34ac-8e6920d45bc3",
-    "controlling_value_regex" : "image",
-    "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
-  },
-  "responsive" : true,
-  "resizable" : true,
-  "show_loading" : false,
-  "type" : "image",
-  "default" : {
-    "size_type" : "auto",
-    "src" : "",
-    "alt" : null,
-    "loading" : "lazy"
-  }
 }, {
   "id" : "1d814583-3d08-ae78-af02-27ce17353735",
   "name" : "background_color",

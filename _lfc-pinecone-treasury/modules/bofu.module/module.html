@@ -1,4 +1,4 @@
-<section class="bofu bofu--has-dark-overlay" style="background-image: url('{{ module.background_image.src }}');">
+<section class="bofu bofu--has-dark-overlay{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.background_style == 'image' %} logo-bar--has-image-background{% endif %}"{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
   <div class="container">
     <div class="row">
       <div class="col col-2-3">
