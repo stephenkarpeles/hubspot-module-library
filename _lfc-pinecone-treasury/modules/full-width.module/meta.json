@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 37038451385,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/css/styles.css",
+    "name" : "styles.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/js/background-video.js",
+    "name" : "background-video.js"
+  } ],
+  "label" : "Full Width (Pinecone)",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,58 @@
+[ {
+  "id" : "33c27567-8348-f0e6-4166-f9b68b3df52f",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "53ed2351-c80a-4034-a640-8db2572443df",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "cd584486-66c7-88f1-96fe-d5fb044b910a",
+  "name" : "list_item_text",
+  "label" : "List Item Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "caf99f77-f6de-8b79-3860-f14b7bb68d50",
+  "name" : "list_item_description",
+  "label" : "List Item Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "5b414913-7d61-d8dc-efa2-1c4e13f8dc8d",
+  "name" : "form_heading",
+  "label" : "Form Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0cc82099-919c-976e-d453-29e0a4fc2472",
+  "name" : "form_intro",
+  "label" : "Form Intro",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

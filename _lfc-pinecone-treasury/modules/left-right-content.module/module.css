@@ -1,0 +1,122 @@
+.lr-content--has-image-background {
+  background-size: cover;
+  background-position: center center;
+}
+
+.lr-content--has-video-background video {
+  object-fit: cover;
+}
+
+.lr-content--has-video-background video::-webkit-media-controls {
+  display: none !important;
+}
+
+.lr-content__intro {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.lr-content-block {
+  margin-bottom: 6.5rem;
+}
+
+.lr-content-block__intro {
+  padding-bottom: 1.25rem;
+}
+
+.lr-content-block__intro:after {
+  display: block;
+  content: url("/hubfs/_lfc-pinecone-treasury/divider.png");
+}
+
+.lr-content-block__heading {
+  padding-bottom: 0.35rem;
+}
+
+.lr-content-block__subheading {
+  padding-bottom: 0.6rem;
+}
+
+.lr-content-block__text {
+  font-weight: 300;
+  color: var(--text-color-main);
+  line-height: 1.9;
+}
+
+.lr-content-block__text p {
+  line-height: 1.9;
+}
+
+.lr-content-block__text p:last-of-type {
+  padding-bottom: 0;
+}
+
+.lr-content-block__text p,
+.lr-content-block__text ul,
+.lr-content-block__text ol {
+  font-weight: 300;
+  color: var(--text-color-main);
+}
+
+.lr-content-block__btn-block {
+  padding-top: 3rem;
+}
+
+.lr-content-block__image {
+  position: relative;
+}
+
+.lr-content-block__image img {
+  object-fit: cover;
+  width: 100%;
+  height: 31rem;
+}
+
+.lr-content-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-1);
+  right: -1rem;
+  bottom: -1rem;
+  cursor: pointer;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.lr-content-block--image-left .lr-content-block__row {
+  flex-direction: row-reverse;
+}
+
+.lr-content-block--image-left .lr-content-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-1);
+  left: -1rem;
+  bottom: -1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 899px) {
+  .lr-content__intro {
+    width: 100%;
+  }
+  
+  .lr-content-block__row > .col:first-of-type {
+    margin-bottom: 4rem;
+  }
+  
+  .lr-content-block__row .col-1-2 {
+    width: 100%;
+  }
+  
+  .lr-content-block__image img {
+    max-height: 26rem;
+  }
+}

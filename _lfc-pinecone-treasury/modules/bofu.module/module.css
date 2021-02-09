@@ -1,0 +1,81 @@
+.bofu {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding: 5rem 0;
+}
+
+.bofu h1,
+.bofu h2,
+.bofu h3,
+.bofu h4 {
+  color: var(--text-color-white);
+}
+
+.bofu .container {
+  position: relative;
+  z-index: 20;
+}
+
+.bofu--centered {
+  text-align: center;
+}
+
+.bofu--centered > .container > .row {
+  justify-content: center;
+}
+
+.bofu--centered .bofu__form {
+  margin-top: 2rem;
+}
+
+.bofu--centered .bofu__form .form__submit-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.bofu--has-dark-overlay:after {
+  position: absolute;
+  z-index: 10;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--overlay-1);
+}
+
+.bofu--has-dark-overlay.bofu--has-dark-overlay-alt:after {
+  background: var(--overlay-2);
+}
+
+.bofu__intro {
+  padding-bottom: 1rem;
+}
+
+.bofu__image img {
+  margin: 0 auto;
+}
+
+.bofu__btn-block {
+  padding-top: 1.25rem;
+}
+
+@media screen and (max-width: 899px) {
+  .bofu .row {
+    flex-direction: column;
+  }
+  
+  .bofu .row .col-1-3,
+  .bofu .row .col-1-2,
+  .bofu .row .col-2-3 {
+    width: 100%;
+  }
+  
+  .bofu__image {
+    display: none;
+  }
+}

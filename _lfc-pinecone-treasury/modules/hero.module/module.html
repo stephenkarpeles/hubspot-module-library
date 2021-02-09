@@ -1,0 +1,103 @@
+{% if module.hero_layout == 'image_left_text_right' %}
+  <section {% if module.background_media == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %} class="hero{% if module.background_media == 'video' %} hero--has-video-background{% endif %}{% if module.dark_overlay == true%} hero--has-dark-overlay{% endif %}"{% if module.background_media == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col col-1-2">
+          <div class="hero__media">
+            <div class="hero__media-wrapper">
+              {% if module.featured_image %}
+                <img src="{{ module.featured_image.src }}" alt="{{ module.featured_image.alt }}">
+              {% endif %}
+              {% if module.accent_image %}
+                <div class="hero__media-accent">
+                  <img src="{{ module.accent_image.src }}" alt="{{ module.accent_image.alt }}">
+                </div>              
+              {% endif %}            
+            </div>            
+          </div>
+        </div>
+        <div class="col col-1-2">
+          <div class="hero__content">
+            {% if module.heading %}
+              <h1 class="hero__heading">{{ module.heading }}</h1>
+            {% endif %}
+            {% if module.subheading %}
+              <h4 class="hero__subheading">{{ module.subheading }}</h4>
+            {% endif %}    
+            <div class="hero__btn-block">          
+              {% for item in module.buttons %}
+                <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                  <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a> 
+              {% endfor %}
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% elif module.hero_layout == 'image_right_text_left' %}
+  <section {% if module.background_media == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %} class="hero hero--reversed{% if module.background_media == 'video' %} hero--has-video-background{% endif %}{% if module.dark_overlay == true%} hero--has-dark-overlay{% endif %}"{% if module.background_media == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col col-1-2">
+          <div class="hero__media">
+            <div class="hero__media-wrapper">
+              {% if module.featured_image.src %}
+                <img src="{{ module.featured_image.src }}" alt="{{ module.featured_image.alt }}">
+              {% endif %}
+              {% if module.accent_image.src %}
+                <div class="hero__media-accent">
+                  <img src="{{ module.accent_image.src }}" alt="{{ module.accent_image.alt }}">
+                </div>              
+              {% endif %}            
+            </div>            
+          </div>
+        </div>
+        <div class="col col-1-2">
+          <div class="hero__content">
+            {% if module.heading %}
+              <h1 class="hero__heading">{{ module.heading }}</h1>
+            {% endif %}
+            {% if module.subheading %}
+              <h4 class="hero__subheading">{{ module.subheading }}</h4>
+            {% endif %}    
+            <div class="hero__btn-block">          
+              {% for item in module.buttons %}
+                <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                  <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a> 
+              {% endfor %}
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% elif module.hero_layout == 'no_image_text_centered' %}
+  <section {% if module.background_media == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %} class="hero hero--centered{% if module.background_media == 'video' %} hero--has-video-background{% endif %}{% if module.dark_overlay == true%} hero--has-dark-overlay{% endif %}{% if module.hero_layout == 'image_right_text_left' %} hero--reversed{% endif %}"{% if module.background_media == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}>
+    <div class="container">
+      <div class="row">
+        <div class="col col-2-3">
+          <div class="hero__content">
+            {% if module.heading %}
+              <h1 class="hero__heading">{{ module.heading }}</h1>
+            {% endif %}
+            {% if module.subheading %}
+              <h4 class="hero__subheading">{{ module.subheading }}</h4>
+            {% endif %} 
+          </div>
+          <div class="hero__btn-block">          
+            {% for item in module.buttons %}
+              <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              </a> 
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

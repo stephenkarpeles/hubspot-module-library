@@ -1,0 +1,41 @@
+<section class="people-bio">
+  <div class="container">
+    <div class="people-bio__intro">
+      <h2>{{ module.heading }}</h2>
+      <h4>{{ module.subheading }}</h4>
+    </div>
+
+    <div class="people-bio-block{% if module.bio_layout == 'image_left_text_right' %} people-bio-block--image-left{% endif %}{% if module.bio_layout == 'image_right_text_left' %} people-bio-block--image-right{% endif %}">
+      <div class="row people-bio-block__row">
+        <div class="col col-1-2">
+          <div class="people-bio-block__intro">
+            <h3 class="people-bio-block__heading">{{ module.bio_name }}</h3>
+            <h5 class="people-bio-block__subheading">{{ module.bio_title_credentials }}</h5>
+          </div>
+          <div class="people-bio-block__text">
+            {{ module.bio_text }}
+          </div>
+        </div>
+        <div class="col col-1-2">
+          <div class="people-bio-block__image">
+            <img src="{{ module.bio_image.src }}" alt="{{ module.bio_image.alt }}">            
+          </div>
+          <div class="people-bio-block__social-list">
+            <ul>
+              {% if module.twitter_link %}
+              <li><a href="{{ module.twitter_link }}"><i class="people-bio-block__social-icon fab fa-twitter"></i></a></li>
+              {% endif %}
+              {% if module.facebook_link %}
+              <li><a href="{{ module.facebook_link }}"><i class="people-bio-block__social-icon fab fa-facebook-f"></i></a></li>
+              {% endif %}
+              {% if module.linkedin_link %}
+              <li><a href="{{ module.linkedin_link }}"><i class="people-bio-block__social-icon fab fa-linkedin-in"></i></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>        
+    </div>
+
+  </div>
+</section> 

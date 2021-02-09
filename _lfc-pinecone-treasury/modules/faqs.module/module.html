@@ -1,0 +1,73 @@
+<section class="faqs{% if module.background_image == true%} faqs--has-background-image{% endif %}"{% if module.section_background_image == true %}style="background-image: url('{{ module.background_image.src }}');"{% endif %}}>
+  <div class="container">
+    <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="faqs__intro{% if module.visual_divider == false %} faqs__intro--no-divider{% endif %}">
+          {% if module.heading %}
+            <h2>{{ module.heading }}</h2>
+          {% endif %}      
+          {% if module.subheading %}
+            <h4>{{ module.subheading }}</h4>
+          {% endif %}
+        </div>
+      </div>
+    </div>    
+    {% if module.number_of_columns == 'one_column_layout' %}
+      <div class="faqs__row row row--justify-content-center">
+        <div class="faqs__col col col-1-2">
+          {% for item in module.column_one_faqs %}
+            <div class="faq-item accordion-container">
+              <h5 class="faq-item__question">
+                {% inline_text field="question" value="{{ item.question }}" %}
+              </h5>
+              <div class="faq-item__answer accordion-content">                            
+                {% inline_rich_text field="answer" value="{{ item.answer }}" %}
+              </div>
+            </div>
+          {% endfor %}          
+        </div>
+      </div>
+    {% endif %}    
+    {% if module.number_of_columns == 'two_column_layout' %}
+      <div class="faqs__row row">
+        <div class="faqs__col col col-1-2">
+          {% for item in module.column_one_faqs %}
+            <div class="faq-item accordion-container">
+              <h5 class="faq-item__question">
+                {% inline_text field="question" value="{{ item.question }}" %}
+              </h5>
+              <div class="faq-item__answer accordion-content">                            
+                {% inline_rich_text field="answer" value="{{ item.answer }}" %}
+              </div>
+            </div>
+          {% endfor %} 
+        </div>
+        <div class="faqs__col col col-1-2">
+          {% for item in module.column_two_faqs %}
+            <div class="faq-item accordion-container">
+              <h5 class="faq-item__question">
+                {% inline_text field="question" value="{{ item.question }}" %}
+              </h5>
+              <div class="faq-item__answer accordion-content">                            
+                {% inline_rich_text field="answer" value="{{ item.answer }}" %}
+              </div>
+            </div>
+          {% endfor %} 
+        </div>
+      </div>
+    {% endif %}    
+    {% if module.button_link %}
+      <div class="row">
+        <div class="col col-full-width">
+          <div class="faqs__btn-block{% if module.button_alignment == 'left' %} faqs__btn-block--btn-left{% endif %}{% if module.button_alignment == 'right' %} faqs__btn-block--btn-right{% endif %}">
+            <a href="{{ module.button_link }}" class="btn{% if module.button_style == 'primary' %} btn--1{% endif %}{% if module.button_style == 'secondary' %} btn--2{% endif %}">
+              {% if module.button_text %}
+                <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

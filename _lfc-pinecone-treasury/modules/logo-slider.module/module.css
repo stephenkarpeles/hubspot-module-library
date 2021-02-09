@@ -1,0 +1,136 @@
+.logo-bar--has-image-background {
+  background-size: cover;
+  background-position: center center;
+}
+
+.logo-bar .slick-dots {
+  bottom: -35px;
+}
+
+.logo-bar .slick-dots li {
+  margin: 0 1px;
+}
+
+.logo-bar .slick-dots li button:before {
+  font-size: 0.75rem;
+  color: var(--dot-color-2);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.logo-bar .slick-dots li button:hover:before {
+  opacity: 0.7;
+}
+
+.logo-bar .slick-dots li.slick-active button:before {
+  color: var(--dot-color-1);
+}
+
+.logo-bar .slick-dots li:only-child {
+  display: none;
+}
+
+.logo-bar__prev-arrow, 
+.logo-bar__next-arrow {
+  position: absolute;
+  display: block;
+  color: var(--text-color-main);
+  font-size: 2rem;
+  cursor: pointer;
+  top: 40%;
+}
+
+.logo-bar__prev-arrow:hover, 
+.logo-bar__next-arrow:hover {
+  opacity: 0.8;
+}
+
+.logo-bar__prev-arrow {
+  left: -2rem;
+}
+
+.logo-bar__next-arrow {
+  right: -2rem;
+}
+
+.logo-bar__intro {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto 3rem;
+}
+
+.logo-bar__intro:after {
+  content: "";
+  position: relative;
+  top: 1rem;
+  display: block;
+  background: var(--border-color-2);
+  height: 2px;
+  width: 540px;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.logo-bar__slide {
+  display: flex !important;
+  height: 180px !important;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.logo-bar__slide-inner {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-bar__btn-block {
+  padding-top: 3rem;
+  justify-content: center;
+  display: flex;
+}
+
+.logo-bar__btn-block.logo-bar__btn-block--btn-left {
+  justify-content: flex-start;
+}
+
+.logo-bar__btn-block.logo-bar__btn-block--btn-right {
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 899px) {
+  .logo-bar__prev-arrow {
+    left: -1.5rem;
+  }
+  
+  .logo-bar__next-arrow {
+    right: -1.5rem;
+  }
+  
+  .logo-bar__intro {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo-bar__prev-arrow {
+    left: -1rem;
+  }
+  
+  .logo-bar__next-arrow {
+    right: -1rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .logo-bar__prev-arrow {
+    left: -0.75rem;
+  }
+  
+  .logo-bar__next-arrow {
+    right: -0.75rem;
+  }
+}

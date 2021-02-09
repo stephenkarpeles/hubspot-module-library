@@ -1,0 +1,84 @@
+[ {
+  "id" : "657178c0-a995-5b44-bd70-e4591b8e7196",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "bf985c7a-5017-7caa-a2c5-b4896947abc1",
+  "name" : "subheading",
+  "label" : "Subheading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "603b1e6d-5781-ea35-5cdf-6af63095b8e9",
+  "name" : "content_block_heading",
+  "label" : "Content Block Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "ae76136d-5a76-88d1-872c-c29d904d794b",
+  "name" : "content_block_subheading",
+  "label" : "Content Block Subheading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "ed11f0a9-af6b-1904-03fe-c456a877c82b",
+  "name" : "content_block_text",
+  "label" : "Content Block Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "0782408f-ef5c-576a-19bb-3aec894a3bc0",
+  "name" : "content_block_image",
+  "label" : "Content Block Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "0fcaea53-2265-b1db-c90a-1a31e47a16d4",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "424097a6-d4a0-8d34-2f57-75cda11f6c08",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

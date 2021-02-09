@@ -1,0 +1,79 @@
+{% if module.card_style == 'image' %}
+<section class="cards{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.text_alignment == 'left' %} text-align-left{% endif %}{% if module.text_alignment == 'right' %} text-align-right{% endif %}{% if module.text_alignment == 'center' %} text-align-center{% endif %}{% if module.background_style == 'video' %} cards--has-video-background{% endif %}{% if module.background_style == 'image' %} cards--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="cards__intro">
+          <h2>{{ module.heading }}</h2>
+          <h4>{{ module.subheading }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">      
+      {% for item in module.card %}
+        <div class="col col-1-{{ loop.length }}">
+          <div class="cards__col-image">
+            <img src="{{ item.card_image.src }}" alt="{{ item.card_image.alt }}">
+          </div>
+          <div class="cards__col-content">
+            <h6>{{ item.card_heading }}</h6>
+            <p>{{ item.card_text }}</p>
+            <a href="{{ item.card_link_url }}">{{ item.card_link_text }} <i class="fas fa-long-arrow-alt-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if module.button_link %}
+      <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="cards__btn-block{% if module.button_alignment == 'left' %} justify-content-flex-start{% endif %}{% if module.button_alignment == 'right' %} justify-content-flex-end{% endif %}{% if module.button_alignment == 'center' %}  justify-content-center{% endif %}">
+          <a href="{{ module.button_link }}" class="btn{% if module.button_style == 'primary' %} btn--1{% endif %}{% if module.button_style == 'secondary' %} btn--2{% endif %}">
+            <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if module.card_style == 'icon' %}
+<section class="cards cards--has-icons{% if module.icon_style == 'center' %} cards--has-icons-centered{% endif %}{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.text_alignment == 'left' %} text-align-left{% endif %}{% if module.text_alignment == 'right' %} text-align-right{% endif %}{% if module.text_alignment == 'center' %} text-align-center{% endif %}{% if module.background_style == 'video' %} cards--has-video-background{% endif %}{% if module.background_style == 'image' %} cards--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="cards__intro">
+          <h2>{{ module.heading }}</h2>
+          <h4>{{ module.subheading }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">      
+      {% for item in module.card %}
+        <div class="col col-1-{{ loop.length }} col--has-icons">
+          <div class="cards__col-icon">
+            <i class="{{item.card_icon}}"></i>
+          </div>
+          <div class="cards__col-content">
+            <h6>{{ item.card_heading }}</h6>
+            <p>{{ item.card_text }}</p>
+            <a href="{{ item.card_link_url }}">{{ item.card_link_text }} <i class="fas fa-long-arrow-alt-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if module.button_link %}
+      <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="cards__btn-block{% if module.button_alignment == 'left' %} justify-content-flex-start{% endif %}{% if module.button_alignment == 'right' %} justify-content-flex-end{% endif %}{% if module.button_alignment == 'center' %}  justify-content-center{% endif %}">
+          <a href="{{ module.button_link }}" class="btn{% if module.button_style == 'primary' %} btn--1{% endif %}{% if module.button_style == 'secondary' %} btn--2{% endif %}">
+            <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

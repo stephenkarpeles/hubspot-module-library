@@ -1,0 +1,28 @@
+<section class="lead-magnet{% if module.background_style == 'video' %} lead-magnet--has-video-background{% endif %}{% if module.background_style == 'image' %} lead-magnet--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="lead-magnet__inner{% if module.inner_card_background_style == 'image' %} lead-magnet__inner--has-image-background{% endif %}" {% if module.inner_card_background_style == 'image' %} style="background-image: url('{{ module.inner_card_background_image.src }}');"{% endif %}{% if module.inner_card_background_style == 'solid' %} style="background: {{ module.inner_card_background_color.color }};"{% endif %}{% if module.inner_card_background_style == 'gradient' %} style="background-image: linear-gradient({{ module.inner_card_gradient_top_color.color }}, {{ module.inner_card_gradient_bottom_color.color }});"{% endif %}>
+      <div class="row">
+        <div class="col col-1-2">
+          <div class="lead-magnet__content{% if module.text_alignment == 'left' %} text-align-left{% endif %}{% if module.text_alignment == 'right' %} text-align-right{% endif %}{% if module.text_alignment == 'center' %} text-align-center{% endif %}">
+            <h3 class="lead-magnet__heading">{{ module.heading }}</h3>
+            <div class="lead-magnet__text">
+              {{ module.text }}
+            </div>
+            <div class="lead-magnet__btn-block">
+              {% for item in module.buttons %}
+                <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                  <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a> 
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col col-1-2">
+          <div class="lead-magnet__media">
+            <img src="{{ module.image.src }}" alt="{{ module.image.alt }}">
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
+</section>

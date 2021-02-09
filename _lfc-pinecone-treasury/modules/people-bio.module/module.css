@@ -1,0 +1,135 @@
+.people-bio__intro {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 899px) {
+  .people-bio__intro {
+    width: 100%;
+  }
+}
+
+.people-bio-block {
+  margin-bottom: 6.5rem;
+}
+
+.people-bio-block__intro {
+  padding-bottom: 1.25rem;
+}
+
+.people-bio-block__intro:after {
+  display: block;
+  content: url("/hubfs/_lfc-pinecone-treasury/divider.png");
+}
+
+.people-bio-block__heading {
+  padding-bottom: 0.35rem;
+}
+
+.people-bio-block__subheading {
+  padding-bottom: 0.6rem;
+}
+
+.people-bio-block__text {
+  font-weight: 300;
+  color: var(--text-color-main);
+  line-height: 1.9;
+}
+
+.people-bio-block__text p {
+  line-height: 1.9;
+}
+
+.people-bio-block__text p:last-of-type {
+  padding-bottom: 0;
+}
+
+.people-bio-block__text p,
+.people-bio-block__text ul,
+.people-bio-block__text ol {
+  font-weight: 300;
+  color: var(--text-color-main);
+}
+
+.people-bio-block__image {
+  position: relative;
+}
+
+.people-bio-block__image > img {
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.people-bio-block__image-accent {
+  position: absolute;
+  z-index: 5;
+  top: -10px;
+  left: 0;
+  right: 0;
+}
+
+.people-bio-block__image-accent img {
+  margin: 0 auto;
+}
+
+.people-bio-block--image-left .people-bio-block__row {
+  flex-direction: row-reverse;
+}
+
+.people-bio-block__social-list {
+  margin-top: 1.3rem;
+}
+
+.people-bio-block__social-list ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.people-bio-block__social-list li {
+  margin: 0 1.05rem;
+  list-style-type: none;
+}
+
+.people-bio-block__social-list li:first-child {
+  margin-left: 0;
+}
+
+.people-bio-block__social-list li:last-child {
+  margin-right: 0;
+}
+
+.people-bio-block__social-list a {
+  color: var(--text-color-main);
+  font-size: 2rem;
+  transition: all 0.2s ease;
+}
+
+.people-bio-block__social-list a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 899px) {
+  .people-bio-block__row > .col:first-of-type {
+    margin-bottom: 4rem;
+  }
+  
+  .people-bio-block__row .col-1-2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .people-bio-block__social-list li {
+    margin: 0 1rem;
+  }
+  
+  .people-bio-block__social-list a {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,104 @@
+[ {
+  "id" : "a03f6ce7-99ab-2c32-9492-65c0220dcd51",
+  "name" : "bio_layout",
+  "label" : "Bio Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image_left_text_right", "Image Left / Text Right" ], [ "image_right_text_left", "Image Right / Text Left" ] ],
+  "type" : "choice",
+  "default" : "image_left_text_right"
+}, {
+  "id" : "7da1be60-2d9f-9f32-50bf-809f237eb912",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "4e858d03-1dce-33dd-a182-ae6fd3713a17",
+  "name" : "subheading",
+  "label" : "Subheading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "fdf6d40e-d118-1291-b36d-89402d38c30c",
+  "name" : "bio_name",
+  "label" : "Bio Name",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "195e6b4c-433d-e628-af18-106380f1b746",
+  "name" : "bio_title_credentials",
+  "label" : "Bio Title / Credentials",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "7ba3469f-996d-facb-28dc-f96beabc8de6",
+  "name" : "bio_text",
+  "label" : "Bio Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "80d36305-0751-b7b2-8fc3-a8dd7639671a",
+  "name" : "bio_image",
+  "label" : "Bio Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "0ff4abb6-4cd2-0f60-e607-8dc7c59d7f5f",
+  "name" : "twitter_link",
+  "label" : "Twitter Link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "2600f6d7-ba27-4268-d254-a317b88c08ba",
+  "name" : "facebook_link",
+  "label" : "Facebook Link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "d7c49f4b-a5d9-993d-42e0-40c83b7fca19",
+  "name" : "linkedin_link",
+  "label" : "LinkedIn Link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

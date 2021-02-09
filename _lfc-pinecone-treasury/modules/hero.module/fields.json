@@ -1,0 +1,194 @@
+[ {
+  "id" : "988b562f-2a51-9df2-1b67-fde4f766a536",
+  "name" : "hero_layout",
+  "label" : "Hero Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image_left_text_right", "Image Left / Text Right" ], [ "image_right_text_left", "Image Right / Text Left" ], [ "no_image_text_centered", "No Image / Text Centered" ] ],
+  "type" : "choice",
+  "default" : "image_left_text_right"
+}, {
+  "id" : "70e46f64-6e2e-a446-a26d-702d264f97de",
+  "name" : "background_media",
+  "label" : "Background Media",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+  "type" : "choice",
+  "default" : "image"
+}, {
+  "id" : "e7d7409f-e269-3a2d-5c31-c06021f6fab1",
+  "name" : "dark_overlay",
+  "label" : "Dark Overlay",
+  "inline_help_text" : "Check this box to place a dark overlay on top of the background (but behind the content).",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "e1fc5e84-011c-1310-1c61-ba5e109016ae",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "7db3b748-cc2b-32a3-d823-68c4c3581d4d",
+  "name" : "subheading",
+  "label" : "Subheading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "d79158b6-497d-f231-fdad-50c61f5882f6",
+  "name" : "buttons",
+  "label" : "Buttons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 2,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "7b484d20-1116-5130-caa8-e69747afc1f2",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2ba6ec9e-4f97-d335-52e4-8bcdf480115e",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "cd5a4c13-e2ea-7a24-5e7d-113881d10c5f",
+    "name" : "button_style",
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+    "type" : "choice",
+    "default" : "primary"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_style" : "primary"
+  }
+}, {
+  "id" : "123e65c7-5bc4-beea-8cc6-7308c8fd6816",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "70e46f64-6e2e-a446-a26d-702d264f97de",
+    "controlling_value_regex" : "image",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "3f9cdf67-cce5-9e09-dee2-402adb18659b",
+  "name" : "background_video_url",
+  "label" : "Background Video URL",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "70e46f64-6e2e-a446-a26d-702d264f97de",
+    "controlling_value_regex" : "video",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "placeholder" : "https://example.com/video.mp4",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "72ee457e-e9e0-0cdc-ca65-fd27430a8e68",
+  "name" : "background_video_poster",
+  "label" : "Background Video Poster",
+  "inline_help_text" : "This image will show in place of the video on mobile devices. (Hint: Keep the image file size small, under 200KB if possible.)",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "70e46f64-6e2e-a446-a26d-702d264f97de",
+    "controlling_value_regex" : "video",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "52fa29ef-02b1-baf9-0ed9-96965ccf6544",
+  "name" : "featured_image",
+  "label" : "Featured Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "9eccad90-5fd3-8f9f-a031-66db222b271b",
+  "name" : "accent_image",
+  "label" : "Accent Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+} ]

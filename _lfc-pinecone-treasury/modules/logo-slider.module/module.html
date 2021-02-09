@@ -1,0 +1,36 @@
+<section class="logo-bar{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.background_style == 'image' %} logo-bar--has-image-background{% endif %}"{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="logo-bar__intro">
+      {% if module.heading %}
+        <h2>{{ module.heading }}</h2>
+      {% endif %}      
+      {% if module.subheading %}
+        <h4>{{ module.subheading }}</h4>
+      {% endif %}
+    </div>
+    <div class="logo-bar__wrapper">
+      <div class="logo-bar__slider">
+        {% for item in module.image %}
+          <div class="logo-bar__slide">
+            <div class="logo-bar__slide-inner">
+              <img src="{{ item.src }}" alt="{{ item.alt }}" {{ sizeAttrs }}>
+            </div>
+          </div>
+        {% endfor %}  
+      </div>
+    </div>
+    {% if module.button_link %}
+      <div class="row">
+        <div class="col col-full-width">
+          <div class="logo-bar__btn-block{% if module.button_alignment == 'left' %} logo-bar__btn-block--btn-left{% endif %}{% if module.button_alignment == 'right' %} logo-bar__btn-block--btn-right{% endif %}">
+            <a href="{{ module.button_link }}" class="btn{% if module.button_style == 'primary' %} btn--1{% endif %}{% if module.button_style == 'secondary' %} btn--2{% endif %}">
+              {% if module.button_text %}
+                <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

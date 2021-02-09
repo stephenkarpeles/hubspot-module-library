@@ -1,0 +1,13 @@
+{
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 36273449348,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/css/styles.css",
+    "name" : "styles.css"
+  } ],
+  "label" : "Header (Pinecone)",
+  "is_available_for_new_content" : true
+}

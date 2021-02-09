@@ -1,0 +1,37 @@
+<section class="columns{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.text_alignment == 'left' %} text-align-left{% endif %}{% if module.text_alignment == 'right' %} text-align-right{% endif %}{% if module.text_alignment == 'center' %} text-align-center{% endif %}{% if module.background_style == 'video' %} columns--has-video-background{% endif %}{% if module.background_style == 'image' %} columns--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="columns__intro">
+          <h2>{{ module.heading }}</h2>
+          <h4>{{ module.subheading }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {% for item in module.column %}      
+        <div class="col col-1-{{ loop.length }}">
+          <div class="columns__col-image">
+            <img src="{{ item.column_image.src }}" alt="{{ item.column_image.alt }}">
+          </div>
+          <div class="columns__col-content">
+            <h6>{{ item.column_heading }}</h6>
+            <p>{{ item.column_text }}</p>
+            <a href="{{ item.column_link_url }}">{{ item.column_link_text }} <i class="fas fa-long-arrow-alt-right"></i></a>
+          </div>
+        </div>
+      {% endfor %}      
+    </div>
+    {% if module.button_link %}
+      <div class="row row--justify-content-center">
+        <div class="col col-full-width">
+          <div class="columns__btn-block{% if module.button_alignment == 'left' %} justify-content-flex-start{% endif %}{% if module.button_alignment == 'right' %} justify-content-flex-end{% endif %}{% if module.button_alignment == 'center' %}  justify-content-center{% endif %}">
+            <a href="{{ module.button_link }}" class="btn{% if module.button_style == 'primary' %} btn--1{% endif %}{% if module.button_style == 'secondary' %} btn--2{% endif %}">
+              <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

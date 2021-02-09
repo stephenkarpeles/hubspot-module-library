@@ -1,0 +1,28 @@
+<section class="people-listing">
+  <div class="container">
+    <div class="row row--justify-content-center">
+      <div class="col col-full-width">
+        <div class="people-listing__intro">
+          <h2>{{ module.heading }}</h2>
+          <h4>{{ module.subheading }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row row--people-listing">      
+      {% for item in module.people_card %}
+        <div class="col col-1-4">
+        {% if item.person_image.src %}
+          <div class="people-listing__col-image">
+            <img src="{{ item.person_image.src }}" alt="{{ item.person_image.alt }}">
+          </div>
+        {% endif %}
+        <div class="people-listing__col-content">
+          <h6>{{ item.person_name }}</h6>
+          <p><em>{{ item.person_title }}</em></p>
+          <a href="{{ item.person_link }}">{{ item.person_link_text }} <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

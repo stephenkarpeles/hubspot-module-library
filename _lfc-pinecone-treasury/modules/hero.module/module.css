@@ -1,0 +1,132 @@
+.hero {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding: 7.5rem 0;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4 {
+  color: var(--text-color-white);
+}
+
+.hero--has-dark-overlay:after {
+  position: absolute;
+  z-index: 10;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--overlay-1);
+}
+
+.hero--has-video-background video {
+  object-fit: cover;
+}
+
+.hero--has-video-background video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero--centered {
+  text-align: center;
+}
+
+.hero--centered > .container > .row {
+  justify-content: center;
+}
+
+.hero--reversed > .container > .row {
+  flex-direction: row-reverse;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 20;
+}
+
+.hero__media {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero__media-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.hero__media-accent {
+  position: absolute;
+  left: -3.75rem;
+  top: -2.25rem;
+  z-index: -1;
+}
+
+.hero__content {
+  color: var(--text-color-white);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero__btn-block {
+  padding-top: 1.75rem;
+}
+
+.hero__btn-block a {
+  margin-right: 1.7rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero__btn-block a:last-of-type {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 899px) {
+  .hero {
+    padding: 5rem 0;
+  }
+  
+  .hero .row {
+    flex-direction: column-reverse;
+  }
+  
+  .hero .row > .col {
+    margin-bottom: 3rem;
+  }
+  
+  .hero .col-1-2,
+  .hero .col-2-3 {
+    width: 100%;
+  }
+  
+  .hero__media-wrapper {
+    margin-top: 4rem;
+  }
+  
+  .hero--reversed > .container > .row {
+    flex-direction: column-reverse;
+  }
+  
+  .hero--reversed > .container > .row .col:first-of-type {
+    margin-bottom: 0;
+  }
+  
+  .hero--centered .row > .col {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero__btn-block a {
+    margin-right: 0;
+  }
+}

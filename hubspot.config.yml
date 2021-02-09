@@ -1,0 +1,12 @@
+defaultPortal: lone-fir
+portals:
+  - name: lone-fir
+    portalId: 2405751
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CMXM8M74LhIEAA0ABBj36pIBINGnogUo7ukMMhkA6ZizAuKds1Ylj6lKJUgahFwftnL9wVqjOh0AAARBAAAAeAAAAAAAAAAAgAAAAAAAAAQAAMAHYEIZAOmYswJAp3d1-mfAaaxtMg1vyLq5ks2Nrg
+        expiresAt: '2021-02-10T02:54:02.316Z'
+    personalAccessKey: >-
+      CiRlODc5MTQxYS02YTZiLTQzZWMtOWVmNy1lZmRkMDVjMTg3ZjMQ9-qSARjRp6IFKhkABeaRgq5KzCxzRL9t-ZeQWwW_eDtqoIYc

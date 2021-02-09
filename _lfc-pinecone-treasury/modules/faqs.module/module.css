@@ -1,0 +1,128 @@
+.faqs {
+  padding: 6rem 0;
+}
+
+.faqs__row .col {
+  display: inline-block;
+}
+
+.faqs__row .col-1-2:first-child {
+  float: left;
+}
+
+.faqs__row .col-1-2:last-child {
+  float: right;
+}
+
+.faqs__intro {
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.faqs__intro h4 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.faqs__intro:after {
+  margin-top: 0.5rem;
+  display: block;
+  content: url("/hubfs/_lfc-pinecone-treasury/divider.png");
+}
+
+.faqs__intro.faqs__intro--no-divider:after {
+  content: "";
+}
+
+.faqs__btn-block {
+  padding-top: 3rem;
+  justify-content: center;
+  display: flex;
+}
+
+.faqs__btn-block.faqs__btn-block--btn-left {
+  justify-content: flex-start;
+}
+
+.faqs__btn-block.faqs__btn-block--btn-right {
+  justify-content: flex-end;
+}
+
+.faqs--has-background-image {
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.faq-item__question {
+  position: relative;
+  cursor: pointer;
+  padding-left: 2.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.faq-item__question:hover {
+  opacity: 0.8;
+}
+
+.faq-item__question:before {
+  font-family: FontAwesome;
+  content: "\f055";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: inline-block;
+}
+
+.is-open-accordion .faq-item__question:before {
+  content: "\f056";
+}
+
+.faq-item__answer {
+  padding-left: 2.5rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.faq-item__answer p {
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.accordion-content {
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion-container.is-open-accordion .accordion-content {
+  height: auto;
+  animation: fadeIn .3s linear;
+}
+
+@media screen and (max-width: 899px) {
+  .faqs {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .faqs .col-1-2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .faqs {
+    padding: 3rem 0 4rem;
+  }
+  
+  .faqs__intro h4 {
+    width: 100%;
+  }
+  
+  .faq-item__question {
+    padding-left: 1.75rem;
+  }
+  
+  .faq-item__answer {
+    padding-left: 1.75rem;
+  }
+}
