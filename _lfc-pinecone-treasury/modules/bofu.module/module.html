@@ -1,4 +1,4 @@
-<section class="bofu bofu--has-dark-overlay{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.background_style == 'image' %} logo-bar--has-image-background{% endif %}"{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+<section class="bofu{% if module.dark_overlay == true%} bofu--has-dark-overlay{% endif %}{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.background_style == 'image' %} logo-bar--has-image-background{% endif %}"{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
   <div class="container">
     <div class="row">
       <div class="col col-2-3">
@@ -14,40 +14,16 @@
     <div class="row">
       <div class="col col-1-2">
         <div class="bofu__form">
-
-          <div class="form-wrapper">
-            <form class="form" action="">
-              <div class="form__row form__row--two-columns">
-                <div class="form__field">
-                  <input type="text" placeholder="First Name">                
-                </div>
-                <div class="form__field">
-                  <input type="text" placeholder="Last Name">                
-                </div>
-              </div>
-              <div class="form__row form__row--two-columns">
-                <div class="form__field">
-                  <input type="text" placeholder="Email">                
-                </div>
-                <div class="form__field">
-                  <input type="text" placeholder="Company">                
-                </div>
-              </div>
-              <div class="form__row form__row--full-width">
-                <div class="form__field">
-                  <textarea placeholder="How can we help?"></textarea>               
-                </div>
-              </div> 
-              <div class="form__row">
-                <div class="form__submit-wrapper">
-                  <button class="form__submit-btn" type="submit" value="Call to Action">
-                    <span>Call to Action <i class="fas fa-long-arrow-alt-right"></i></span>
-                  </button>
-                </div>
-              </div>               
-            </form>
-          </div>
-
+          <div class="bofu-form-wrapper">
+            {% form
+              form_to_use="{{ module.form_field.form_id }}"
+              response_response_type="{{ module.form_field.response_type }}"
+              response_message="{{ module.form_field.message }}"
+              response_redirect_id="{{ module.form_field.redirect_id }}"
+              response_redirect_url="{{module.form_field.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+            %}     
+           </div>
         </div>
       </div>
       <div class="col col-1-2">

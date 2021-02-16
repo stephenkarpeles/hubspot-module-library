@@ -7,13 +7,15 @@
           {{ module.text }}
         </div>
         <ul class="lr-form__list">
-          <li class="lr-form__list-item">
-            <i class="fas fa-check-circle lr-form__list-item-icon"></i>
-            <div class="lr-form__list-item-heading">
-              <strong>{{ module.list_item_text }}</strong>
-            </div>
-            <span class="lr-form__list-item-text">{{ module.list_item_description }}</span>
-          </li>           
+          {% for item in module.list_item %}
+            <li class="lr-form__list-item">
+              <i class="fas fa-check-circle lr-form__list-item-icon"></i>
+              <div class="lr-form__list-item-heading">
+                <strong>{% inline_text field="list_item_text" value="{{ item.list_item_text }}" %}</strong>
+              </div>
+              <span class="lr-form__list-item-text">{% inline_text field="list_item_description" value="{{ item.list_item_description }}" %}</span>
+            </li>   
+          {% endfor %}
         </ul>
       </div>
       <div class="col col-1-3">
@@ -24,30 +26,16 @@
           <div class="lr-form__form-intro">
             {{ module.form_intro }}
           </div>
-          <form class="form lr-form__form" action="">
-            <div class="form__row form__row--full-width">
-              <div class="form__field">
-                <input type="text" placeholder="First Name">                
-              </div>
-            </div>
-            <div class="form__row form__row--full-width">
-              <div class="form__field">
-                <input type="text" placeholder="Last Name">                
-              </div>
-            </div>
-            <div class="form__row form__row--full-width">
-              <div class="form__field">
-                <input type="text" placeholder="Email">                
-              </div>
-            </div>
-            <div class="form__row form__row--justify-content-center">
-              <div class="form__submit-wrapper">
-                <button class="form__submit-btn" type="submit" value="Call to Action">
-                  <span>Call to Action <i class="fas fa-long-arrow-alt-right"></i></span>
-                </button>
-              </div>
-            </div>               
-          </form>
+          <div class="lr-form__embed-code-wrapper">
+            {% form
+              form_to_use="{{ module.form_field.form_id }}"
+              response_response_type="{{ module.form_field.response_type }}"
+              response_message="{{ module.form_field.message }}"
+              response_redirect_id="{{ module.form_field.redirect_id }}"
+              response_redirect_url="{{module.form_field.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+            %}
+          </div>          
         </div>
       </div>
     </div>
