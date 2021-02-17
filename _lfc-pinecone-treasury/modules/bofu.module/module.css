@@ -45,7 +45,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background: var(--overlay-1);
+  background: var(--overlay-2);
 }
 
 .bofu--has-dark-overlay.bofu--has-dark-overlay-alt:after {
