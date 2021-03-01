@@ -17,9 +17,11 @@
               {{ module.content_block_text }}
             </div>
             <div class="lr-content-block__btn-block">
-              <a href="{{ module.button_link }}" class="btn btn--1">
-                <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
-              </a>
+              {% for item in module.buttons %}
+                <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                  <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a> 
+              {% endfor %}
             </div>
           </div>
           <div class="col col-1-2">
@@ -42,9 +44,11 @@
             {{ module.content_block_text }}
           </div>
           <div class="lr-content-block__btn-block">
-            <a href="{{ module.button_link }}" class="btn btn--1">
-              <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
-            </a>
+            {% for item in module.buttons %}
+              <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              </a> 
+            {% endfor %}
           </div>
         </div>
         <div class="col col-1-2">

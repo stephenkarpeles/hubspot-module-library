@@ -82,23 +82,52 @@
     "loading" : "disabled"
   }
 }, {
-  "id" : "0fcaea53-2265-b1db-c90a-1a31e47a16d4",
-  "name" : "button_text",
-  "label" : "Button Text",
+  "id" : "d79158b6-497d-f231-fdad-50c61f5882f6",
+  "name" : "buttons",
+  "label" : "Buttons",
   "required" : false,
   "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "424097a6-d4a0-8d34-2f57-75cda11f6c08",
-  "name" : "button_link",
-  "label" : "Button Link",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
+  "occurrence" : {
+    "min" : 0,
+    "max" : 2,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "7b484d20-1116-5130-caa8-e69747afc1f2",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2ba6ec9e-4f97-d335-52e4-8bcdf480115e",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "cd5a4c13-e2ea-7a24-5e7d-113881d10c5f",
+    "name" : "button_style",
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+    "type" : "choice",
+    "default" : "primary"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_style" : "primary"
+  }
 } ]
