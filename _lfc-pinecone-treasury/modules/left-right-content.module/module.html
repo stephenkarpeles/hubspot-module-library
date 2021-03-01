@@ -5,7 +5,33 @@
       <h4>{{ module.subheading }}</h4>
     </div>
 
-    <div class="lr-content-block lr-content-block--image-right">
+    {% if module.content_layout == 'image_right_text_left' %}
+      <div class="lr-content-block lr-content-block--image-right">
+        <div class="row lr-content-block__row">
+          <div class="col col-1-2">
+            <div class="lr-content-block__intro">
+              <h3 class="lr-content-block__heading">{{ module.content_block_heading }}</h3>
+              <h5 class="lr-content-block__subheading">{{ module.content_block_subheading }}</h5>
+            </div>
+            <div class="lr-content-block__text">
+              {{ module.content_block_text }}
+            </div>
+            <div class="lr-content-block__btn-block">
+              <a href="{{ module.button_link }}" class="btn btn--1">
+                <span>{{ module.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="col col-1-2">
+            <div class="lr-content-block__image">
+              <img src="{{ module.content_block_image.src }}" alt="{{ module.content_block_image.alt }}">
+            </div>
+          </div>
+        </div>        
+      </div>
+
+    {% elif module.content_layout == 'image_left_text_right' %}
+      <div class="lr-content-block lr-content-block--image-left">
       <div class="row lr-content-block__row">
         <div class="col col-1-2">
           <div class="lr-content-block__intro">
@@ -27,7 +53,8 @@
           </div>
         </div>
       </div>        
-    </div>
+      </div>
+    {% endif %}
 
   </div>
 </section> 

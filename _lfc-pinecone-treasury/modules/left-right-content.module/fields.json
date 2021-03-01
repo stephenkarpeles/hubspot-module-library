@@ -1,4 +1,14 @@
 [ {
+  "id" : "988b562f-2a51-9df2-1b67-fde4f766a536",
+  "name" : "content_layout",
+  "label" : "Content Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image_right_text_left", "Image Right / Text Left" ], [ "image_left_text_right", "Image Left / Text Right" ] ],
+  "type" : "choice",
+  "default" : "image_right_text_left"
+}, {
   "id" : "657178c0-a995-5b44-bd70-e4591b8e7196",
   "name" : "heading",
   "label" : "Heading",
@@ -45,6 +55,16 @@
   "required" : false,
   "locked" : false,
   "type" : "richtext"
+}, {
+  "id" : "02db5da2-830b-b9f0-3e76-a0ddb7bf63c5",
+  "name" : "text_alignment",
+  "label" : "Text Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "type" : "choice",
+  "default" : "left"
 }, {
   "id" : "0782408f-ef5c-576a-19bb-3aec894a3bc0",
   "name" : "content_block_image",
