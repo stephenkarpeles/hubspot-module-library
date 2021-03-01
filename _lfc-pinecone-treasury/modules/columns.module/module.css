@@ -137,7 +137,7 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .columns .col-1-6 {
+  .columns .row .col-1-6 {
     width: calc(33.33% - var(--gutter-width));
   }
   
@@ -157,7 +157,7 @@
 }
 
 @media screen and (max-width: 899px) {
-  .columns .col-1-4 {
+  .columns .row .col-1-4 {
     width: calc(50% - var(--gutter-width));
   }
   .columns__col-icon i {
@@ -165,16 +165,21 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .columns .col-1-6 {
-    width: calc(50% - var(--gutter-width));
-  }
-  
-  .columns--has-icons .col-1-6,
-  .columns--has-icons .col-1-5,
-  .columns--has-icons .col-1-4,
-  .columns--has-icons .col-1-3,
-  .columns--has-icons .col-1-2 {
+@media screen and (max-width: 767px) { 
+.columns--has-icons .row .col-1-6,
+  .columns--has-icons .row .col-1-5,
+  .columns--has-icons .row .col-1-4,
+  .columns--has-icons .row .col-1-3,
+  .columns--has-icons .row .col-1-2 {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .columns .row .col-1-6,
+  .columns .row .col-1-5,
+  .columns .row .col-1-4,
+  .columns .row .col-1-3 {
+    width: calc(100% - var(--gutter-width));
   }
 }

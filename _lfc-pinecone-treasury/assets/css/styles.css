@@ -48,8 +48,8 @@
   --form-gutter-width: 1rem;
 
   /* Layout */
-  --section-padding: 3rem 0;
-  --section-padding-small: 1.5rem 0;
+  --section-padding: 4rem 0;
+  --section-padding-small: 2rem 0;
   --section-padding-large: 6rem 0;
   --container-width: 70rem; 
   --container-max-width: 90%;
