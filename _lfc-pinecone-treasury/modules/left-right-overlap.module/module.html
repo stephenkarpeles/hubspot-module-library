@@ -1,0 +1,64 @@
+<section class="lr-overlap{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}{% if module.text_alignment == 'left' %} text-align-left{% endif %}{% if module.text_alignment == 'right' %} text-align-right{% endif %}{% if module.text_alignment == 'center' %} text-align-center{% endif %}{% if module.background_style == 'video' %} lr-overlap--has-video-background{% endif %}{% if module.background_style == 'image' %} lr-overlap--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+    <div class="lr-overlap__intro">
+      <h2>{{ module.heading }}</h2>
+      <h4>{{ module.subheading }}</h4>
+    </div>
+
+    {% if module.content_layout == 'image_right_text_left' %}
+      <div class="lr-overlap-block lr-overlap-block--image-right">
+        <div class="row lr-overlap-block__row">
+          <div class="col col-7-12 lr-overlap-col__text">
+            <div class="lr-overlap-block__intro">
+              <h3 class="lr-overlap-block__heading">{{ module.content_block_heading }}</h3>
+              <h5 class="lr-overlap-block__subheading">{{ module.content_block_subheading }}</h5>
+            </div>
+            <div class="lr-overlap-block__text">
+              {{ module.content_block_text }}
+            </div>
+            <div class="lr-overlap-block__btn-block">
+              {% for item in module.buttons %}
+                <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                  <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+                </a> 
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col col-7-12 lr-overlap-col__image">
+            <div class="lr-overlap-block__image">
+              <img src="{{ module.content_block_image.src }}" alt="{{ module.content_block_image.alt }}">
+            </div>
+          </div>
+        </div>        
+      </div>
+
+    {% elif module.content_layout == 'image_left_text_right' %}
+      <div class="lr-overlap-block lr-overlap-block--image-left">
+      <div class="row lr-overlap-block__row">
+        <div class="col col-7-12 lr-overlap-col__text">
+          <div class="lr-overlap-block__intro">
+            <h3 class="lr-overlap-block__heading">{{ module.content_block_heading }}</h3>
+            <h5 class="lr-overlap-block__subheading">{{ module.content_block_subheading }}</h5>
+          </div>
+          <div class="lr-overlap-block__text">
+            {{ module.content_block_text }}
+          </div>
+          <div class="lr-overlap-block__btn-block">
+            {% for item in module.buttons %}
+              <a href="{{ item.button_link }}" class="btn{% if item.button_style == 'primary' %} btn--1{% endif %}{% if item.button_style == 'secondary' %} btn--2{% endif %}">
+                <span>{{ item.button_text }} <i class="fas fa-long-arrow-alt-right"></i></span>
+              </a> 
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col col-7-12 lr-overlap-col__image">
+          <div class="lr-overlap-block__image">
+            <img src="{{ module.content_block_image.src }}" alt="{{ module.content_block_image.alt }}">
+          </div>
+        </div>
+      </div>        
+      </div>
+    {% endif %}
+
+  </div>
+</section> 
