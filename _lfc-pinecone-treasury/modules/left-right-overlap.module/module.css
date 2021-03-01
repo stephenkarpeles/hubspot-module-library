@@ -17,6 +17,7 @@
   margin: 0 auto;
   padding-bottom: 4rem;
 }
+
 @media screen and (max-width: 899px) {
   .lr-overlap__intro {
     width: 100%;
@@ -29,6 +30,7 @@
   top: 0;
   z-index: 5;
 }
+
 .lr-overlap-col__text {
   position: relative;
   z-index: 15;
@@ -45,6 +47,7 @@
   top: 0;
   z-index: 5;
 }
+
 .lr-overlap-block--image-left .lr-overlap-col__text {
   position: relative;
   z-index: 15;
@@ -53,53 +56,66 @@
 .lr-overlap-block {
   margin-bottom: 5rem;
 }
+
 .lr-overlap-block__row {
   position: relative;
   min-height: 480px;
 }
+
 .lr-overlap-block__intro {
   padding-bottom: 1.25rem;
 }
+
 .lr-overlap-block__intro:after {
   display: block;
   content: url("/hubfs/_lfc-pinecone-treasury/divider.png");
 }
+
 .lr-overlap-block__heading {
   padding-bottom: 0.35rem;
 }
+
 .lr-overlap-block__subheading {
   padding-bottom: 0.6rem;
 }
+
 .lr-overlap-block__text {
   font-weight: 300;
   color: #666;
   line-height: 1.9;
 }
+
 .lr-overlap-block__text p {
   line-height: 1.9;
   padding-bottom: 1rem;
 }
+
 .lr-overlap-block__text p:last-of-type {
   padding-bottom: 0;
 }
+
 .lr-overlap-block__text p,
 .lr-overlap-block__text ul,
 .lr-overlap-block__text ol {
   font-weight: 300;
   color: #666;
 }
+
 .lr-overlap-block__btn-block {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
 }
+
 .lr-overlap-block__image {
   position: relative;
 }
+
 .lr-overlap-block__image img {
   object-fit: cover;
   width: 100%;
   height: 445px;
 }
+
 .lr-overlap-block__image:before {
   position: absolute;
   content: "";
@@ -112,9 +128,11 @@
   cursor: pointer;
   box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
 }
+
 .lr-overlap-block--image-left .lr-overlap-block__row {
   flex-direction: row-reverse;
 }
+
 .lr-overlap-block--image-left .lr-overlap-block__image:before {
   position: absolute;
   content: "";
@@ -126,31 +144,37 @@
   bottom: -1rem;
   cursor: pointer;
 }
+
 @media screen and (max-width: 1259px) {
   .lr-overlap-block .lr-overlap-col__image {
     position: relative;
   }
+  
   .lr-overlap-block .lr-overlap-col__text {
     height: auto;
   }
-  .lr-overlap-block__row > .col:first-of-type {
+  
+  .lr-overlap-block__row>.col:first-of-type {
     margin-bottom: 4rem;
   }
+  
   .lr-overlap-block__row .col-7-12 {
     width: 100%;
   }
+  
   .lr-overlap-block__image img {
     max-height: 445px;
   }
 }
+
 @media screen and (max-width: 1023px) {
   .lr-overlap-block__image img {
     height: 360px;
   }
 }
+
 @media screen and (max-width: 699px) {
   .lr-overlap-block__image img {
     height: 300px;
   }
 }
-

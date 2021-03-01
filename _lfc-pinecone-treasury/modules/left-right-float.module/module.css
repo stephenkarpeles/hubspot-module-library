@@ -1,0 +1,223 @@
+.lr-float--has-image-background {
+  background-size: cover;
+  background-position: center center;
+}
+
+.lr-float--has-video-background video {
+  object-fit: cover;
+}
+
+.lr-float--has-video-background video::-webkit-media-controls {
+  display: none !important;
+}
+
+.lr-float {
+  overflow: hidden;
+}
+
+.lr-float__intro {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 899px) {
+  .lr-float__intro {
+    width: 100%;
+  }
+}
+
+.lr-float-block {
+  margin-bottom: 6.5rem;
+}
+
+.lr-float-block__intro {
+  padding-bottom: 1.25rem;
+}
+
+.lr-float-block__intro:after {
+  display: block;
+  content: url("../images/divider.png");
+}
+
+.lr-float-block__heading {
+  padding-bottom: 0.35rem;
+}
+
+.lr-float-block__subheading {
+  padding-bottom: 0.6rem;
+}
+
+.lr-float-block__text {
+  font-weight: 300;
+  color: var(--text-color-main);
+  line-height: 1.9;
+}
+
+.lr-float-block__text p {
+  line-height: 1.9;
+}
+
+.lr-float-block__text p:last-of-type {
+  padding-bottom: 0;
+}
+
+.lr-float-block__text p,
+.lr-float-block__text ul,
+.lr-float-block__text ol {
+  font-weight: 300;
+  color: var(--text-color-main);
+}
+
+.lr-float-block__btn-block {
+  padding-top: 3rem;
+}
+
+.lr-float-block .col-1-2 .lr-float-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 31rem;
+  width: 50vw;
+  background: var(--gradient-1);
+  margin-top: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+  right: calc((-1 * 1.875rem) - 1rem);
+}
+
+.lr-float-block .col-1-2 .lr-float-block__image img {
+  object-fit: cover;
+  height: 31rem;
+  width: 50vw;
+  position: absolute;
+}
+
+.lr-float-block .col-1-4 .lr-float-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 31rem;
+  width: 50vw;
+  background: var(--gradient-1);
+  margin-top: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+  right: calc((-1 * 1.875rem) - 1rem);
+}
+
+.lr-float-block .col-1-4 .lr-float-block__image img {
+  object-fit: cover;
+  height: 31rem;
+  width: 50vw;
+  position: absolute;
+}
+
+.lr-float-block--image-left .lr-float-block__row {
+  flex-direction: row-reverse;
+}
+
+.lr-float-block--image-left .col-1-2 .lr-float-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 31rem;
+  width: 50vw;
+  background: var(--gradient-1);
+  margin-top: 1rem;
+  margin-left: -1rem;
+  left: calc(-1 * 1.875rem);
+  cursor: pointer;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.lr-float-block--image-left .col-1-2 .lr-float-block__image img {
+  object-fit: cover;
+  height: 31rem;
+  width: 50vw;
+  position: absolute;
+  left: calc(-1 * 1.875rem);
+}
+
+.lr-float-block--image-left .col-3-4 .lr-float-block__image:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 35rem;
+  background: var(--gradient-1);
+  margin-top: 1rem;
+  margin-left: -1rem;
+  left: calc(-1 * 1.875rem);
+  cursor: pointer;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.lr-float-block--image-left .col-3-4 .lr-float-block__image img {
+  object-fit: cover;
+  height: 35rem;
+  position: absolute;
+  left: calc(-1 * 1.875rem);
+}
+
+@media screen and (max-width: 899px) {
+  .lr-float-block__row>.col:first-of-type {
+    margin-bottom: 4rem;
+  }
+  
+  .lr-float-block__row .col-1-2 {
+    width: 100%;
+  }
+  
+  .lr-float-block .col-1-2 .lr-float-block__image {
+    position: relative;
+  }
+  
+  .lr-float-block .col-1-2 .lr-float-block__image:before {
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    left: auto;
+    right: auto;
+  }
+  
+  .lr-float-block .col-1-2 .lr-float-block__image img {
+    max-height: 26rem;
+    height: auto;
+    width: 100%;
+    position: relative;
+    right: auto;
+    left: auto;
+  }
+
+  .lr-float-block--image-left .lr-float-block__image {
+    position: relative;
+  }
+
+  .lr-float-block--image-left .lr-float-block__image:before {
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    left: auto;
+    right: auto;
+  }
+
+  .lr-float-block--image-left .lr-float-block__image img {
+    max-height: 26rem;
+    height: auto;
+    width: 100%;
+    position: relative;
+    right: auto;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .lr-float-block .col-1-2 .lr-float-block__image img {
+    max-height: 18rem;
+  }
+}
