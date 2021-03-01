@@ -13,6 +13,7 @@
 
 .lr-float {
   overflow: hidden;
+  padding-bottom: 10rem !important;
 }
 
 .lr-float__intro {
@@ -23,6 +24,10 @@
 }
 
 @media screen and (max-width: 899px) {
+  .lr-float {
+    padding-bottom: inherit !important;
+  }
+
   .lr-float__intro {
     width: 100%;
   }
@@ -38,7 +43,7 @@
 
 .lr-float-block__intro:after {
   display: block;
-  content: url("../images/divider.png");
+  content: url("/hubfs/_lfc-pinecone-treasury/divider.png");
 }
 
 .lr-float-block__heading {
@@ -77,7 +82,7 @@
 .lr-float-block .col-1-2 .lr-float-block__image:before {
   position: absolute;
   content: "";
-  z-index: -1;
+  z-index: 0;
   height: 31rem;
   width: 50vw;
   background: var(--gradient-1);
@@ -98,7 +103,7 @@
 .lr-float-block .col-1-4 .lr-float-block__image:before {
   position: absolute;
   content: "";
-  z-index: -1;
+  z-index: 0;
   height: 31rem;
   width: 50vw;
   background: var(--gradient-1);
@@ -123,7 +128,7 @@
 .lr-float-block--image-left .col-1-2 .lr-float-block__image:before {
   position: absolute;
   content: "";
-  z-index: -1;
+  z-index: 0;
   height: 31rem;
   width: 50vw;
   background: var(--gradient-1);
@@ -145,7 +150,7 @@
 .lr-float-block--image-left .col-3-4 .lr-float-block__image:before {
   position: absolute;
   content: "";
-  z-index: -1;
+  z-index: 0;
   height: 35rem;
   background: var(--gradient-1);
   margin-top: 1rem;
@@ -166,15 +171,15 @@
   .lr-float-block__row>.col:first-of-type {
     margin-bottom: 4rem;
   }
-  
+
   .lr-float-block__row .col-1-2 {
     width: 100%;
   }
-  
+
   .lr-float-block .col-1-2 .lr-float-block__image {
     position: relative;
   }
-  
+
   .lr-float-block .col-1-2 .lr-float-block__image:before {
     height: 100%;
     width: 100%;
@@ -183,7 +188,7 @@
     left: auto;
     right: auto;
   }
-  
+
   .lr-float-block .col-1-2 .lr-float-block__image img {
     max-height: 26rem;
     height: auto;
