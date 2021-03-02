@@ -96,6 +96,10 @@
   border: 1px solid var(--border-color-3);
 }
 
+.lr-form__embed-code-wrapper fieldset {
+  max-width: 100% !important;
+}
+
 .lr-form__embed-code-wrapper ::placeholder {
   color: #999;
   font-size: 1rem;
@@ -132,6 +136,23 @@
 .lr-form__embed-code-wrapper input[type="submit"]:hover {
   background: var(--body-background-color);
   color: var(--background-color-4);
+}
+
+.lr-form__embed-code-wrapper .hs-submit .actions {
+  position: relative;
+  margin-left: .625rem;
+}
+
+.lr-form__embed-code-wrapper .hs-submit .actions::before {  
+  position: absolute;
+  content: "";
+  z-index: 0;
+  width: 100%;
+  height: calc(100% - .625rem);
+  background: var(--gradient-1);
+  left: -0.625rem;
+  bottom: 0;
+  cursor: pointer;
 }
 
 .lr-form__embed-code-wrapper .hs-submit {
