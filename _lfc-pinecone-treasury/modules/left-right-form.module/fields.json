@@ -1,4 +1,14 @@
 [ {
+  "id" : "988b562f-2a51-9df2-1b67-fde4f766a536",
+  "name" : "content_layout",
+  "label" : "Content Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "text_left_form_right", "Text Left / Form Right" ], [ "text_right_form_left", "Text Right / Form Left" ] ],
+  "type" : "choice",
+  "default" : "text_left_form_right"
+}, {
   "id" : "33c27567-8348-f0e6-4166-f9b68b3df52f",
   "name" : "heading",
   "label" : "Heading",
@@ -83,4 +93,14 @@
     "response_type" : "inline",
     "message" : "Thanks for submitting the form."
   }
+}, {
+  "id" : "19bd0e27-be4b-8776-6245-5adde0c0fc34",
+  "name" : "padding",
+  "label" : "Top/Bottom Padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+  "type" : "choice",
+  "default" : "medium"
 } ]

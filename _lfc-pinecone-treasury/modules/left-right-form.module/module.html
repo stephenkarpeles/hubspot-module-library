@@ -1,43 +1,84 @@
-<section class="lr-form">
+<section class="lr-form{% if module.padding == 'small' %} padding--small{% endif %}{% if module.padding == 'large' %} padding--large{% endif %}">
   <div class="container">
     <div class="row">
-      <div class="col col-7-12">
-        <h4 class="lr-form__section-heading">{{ module.heading }}</h4>
-        <div class="lr-form__section-text">
-          {{ module.text }}
-        </div>
-        <ul class="lr-form__list">
-          {% for item in module.list_item %}
-            <li class="lr-form__list-item">
-              <i class="fas fa-check-circle lr-form__list-item-icon"></i>
-              <div class="lr-form__list-item-heading">
-                <strong>{% inline_text field="list_item_text" value="{{ item.list_item_text }}" %}</strong>
-              </div>
-              <span class="lr-form__list-item-text">{% inline_text field="list_item_description" value="{{ item.list_item_description }}" %}</span>
-            </li>   
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="col col-1-3">
-        <div class="lr-form__form-wrapper">
-          <div class="lr-form__form-header">
-            <h3>{{ module.form_heading }}</h3>
+      {% if module.content_layout == 'text_left_form_right' %}
+        <div class="col col-7-12">
+          <h4 class="lr-form__section-heading">{{ module.heading }}</h4>
+          <div class="lr-form__section-text">
+            {{ module.text }}
           </div>
-          <div class="lr-form__form-intro">
-            {{ module.form_intro }}
-          </div>
-          <div class="lr-form__embed-code-wrapper">
-            {% form
-              form_to_use="{{ module.form_field.form_id }}"
-              response_response_type="{{ module.form_field.response_type }}"
-              response_message="{{ module.form_field.message }}"
-              response_redirect_id="{{ module.form_field.redirect_id }}"
-              response_redirect_url="{{module.form_field.redirect_url}}"
-              gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
-            %}
-          </div>          
+          <ul class="lr-form__list">
+            {% for item in module.list_item %}
+              <li class="lr-form__list-item">
+                <i class="fas fa-check-circle lr-form__list-item-icon"></i>
+                <div class="lr-form__list-item-heading">
+                  <strong>{% inline_text field="list_item_text" value="{{ item.list_item_text }}" %}</strong>
+                </div>
+                <span class="lr-form__list-item-text">{% inline_text field="list_item_description" value="{{ item.list_item_description }}" %}</span>
+              </li>   
+            {% endfor %}
+          </ul>
         </div>
-      </div>
+        <div class="col col-1-3">
+          <div class="lr-form__form-wrapper">
+            <div class="lr-form__form-header">
+              <h3>{{ module.form_heading }}</h3>
+            </div>
+            <div class="lr-form__form-intro">
+              {{ module.form_intro }}
+            </div>
+            <div class="lr-form__embed-code-wrapper">
+              {% form
+                form_to_use="{{ module.form_field.form_id }}"
+                response_response_type="{{ module.form_field.response_type }}"
+                response_message="{{ module.form_field.message }}"
+                response_redirect_id="{{ module.form_field.redirect_id }}"
+                response_redirect_url="{{module.form_field.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+              %}
+            </div>          
+          </div>
+        </div>
+
+      {% elif module.content_layout == 'text_right_form_left' %}
+        <div class="col col-1-3">
+          <div class="lr-form__form-wrapper">
+            <div class="lr-form__form-header">
+              <h3>{{ module.form_heading }}</h3>
+            </div>
+            <div class="lr-form__form-intro">
+              {{ module.form_intro }}
+            </div>
+            <div class="lr-form__embed-code-wrapper">
+              {% form
+                form_to_use="{{ module.form_field.form_id }}"
+                response_response_type="{{ module.form_field.response_type }}"
+                response_message="{{ module.form_field.message }}"
+                response_redirect_id="{{ module.form_field.redirect_id }}"
+                response_redirect_url="{{module.form_field.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+              %}
+            </div>          
+          </div>
+        </div>
+        <div class="col col-7-12">
+          <h4 class="lr-form__section-heading">{{ module.heading }}</h4>
+          <div class="lr-form__section-text">
+            {{ module.text }}
+          </div>
+          <ul class="lr-form__list">
+            {% for item in module.list_item %}
+              <li class="lr-form__list-item">
+                <i class="fas fa-check-circle lr-form__list-item-icon"></i>
+                <div class="lr-form__list-item-heading">
+                  <strong>{% inline_text field="list_item_text" value="{{ item.list_item_text }}" %}</strong>
+                </div>
+                <span class="lr-form__list-item-text">{% inline_text field="list_item_description" value="{{ item.list_item_description }}" %}</span>
+              </li>   
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
