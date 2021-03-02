@@ -68,12 +68,6 @@
   padding: 1.75rem 1rem;
 }
 
-.lr-form__embed-code-wrapper input:not([type=checkbox]),
-.lr-form__embed-code-wrapper input:not([type=radio]),
-.lr-form__embed-code-wrapper textarea {
-  border: 1px solid var(--border-color-3);
-}
-
 .lr-form__form .form__submit-wrapper {
   margin-top: 0.25rem;
 }
@@ -87,15 +81,19 @@
 }
 
 .lr-form__embed-code-wrapper input[type='text'],
-.lr-form__embed-code-wrapper input[type='email'] {
+.lr-form__embed-code-wrapper input[type='email'],
+.lr-form__embed-code-wrapper input:not([type=checkbox]),
+.lr-form__embed-code-wrapper input:not([type=radio]),
+.lr-form__embed-code-wrapper textarea  {
   width: 100%;
-  border: none;
   appearance: none;
   -webkit-appearance: none;
   font-family: var(--font-stack-2);
   font-size: var(--font-size-h6);
   padding: 1.5rem 1.75rem;
   border-radius: 0;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color-3);
 }
 
 .lr-form__embed-code-wrapper ::placeholder {
@@ -103,10 +101,16 @@
   font-size: 1rem;
 } 
 
-.lr-form__embed-code-wrapper .input {
+.lr-form__embed-code-wrapper .input,
+.lr-form__embed-code-wrapper fieldset.form-columns-1 .hs-input,
+.lr-form__embed-code-wrapper fieldset.form-columns-1 .input,
+.lr-form__embed-code-wrapper fieldset.form-columns-2 .input {
   display: flex;
-  width: 88%;
-  margin: 0 auto;
+  width: 100% !important;
+}
+
+.lr-form__embed-code-wrapper fieldset.form-columns-2 .hs-form-field {
+  width: 100% !important;
 }
 
 .lr-form__embed-code-wrapper input[type="submit"] {
