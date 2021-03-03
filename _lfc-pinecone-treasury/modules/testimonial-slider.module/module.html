@@ -1,0 +1,44 @@
+<section class="quotes{% if module.background_style == 'video' %} lead-magnet--has-video-background{% endif %}{% if module.background_style == 'image' %} lead-magnet--has-image-background{% endif %}" {% if module.background_style == 'video' %}data-vide-bg="mp4: {{ module.background_video_url }}, poster: {{ module.background_video_poster }}" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%"{% endif %}{% if module.background_style == 'image' %} style="background-image: url('{{ module.background_image.src }}');"{% endif %}{% if module.background_style == 'solid' %} style="background: {{ module.background_color.color }};"{% endif %}{% if module.background_style == 'gradient' %} style="background-image: linear-gradient({{ module.background_gradient_top_color.color }}, {{ module.background_gradient_bottom_color.color }});"{% endif %}>
+  <div class="container">
+
+    <div class="row">
+      <div class="col col-full-width text-centered">
+        <h2>{{ module.heading }}</h2>
+      </div>
+    </div>
+
+    <div class="quote-slider">
+
+      {% for item in module.slides %}
+      <div class="quote-slide">
+        <div class="quote-slide-inner">
+          <div class="quote-image">
+            <img src="{{item.image.src}}" alt="{{item.image.alt}}">
+          </div>
+          <div class="quote-content">
+            <div class="quote-content-inner">
+              <div class="quote-text">
+                <i class="fas fa-quote-left"></i>
+                {{ item.quote_text }}
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="quote-author">
+                <div class="quote-author-image">
+                  <img src="{{item.author_image.src}}" alt="{{item.author_image.alt}}">
+                </div>
+                <div class="quote-author-info">
+                  <div class="name">{{ item.quote_author }}</div>
+                  <div class="company">{{ item.quote_company }}</div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                
+
+
+      </div>   
+      {% endfor %}       
+    </div>
+
+  </div>
+</section>
