@@ -18,15 +18,15 @@
     <script src="https://kit.fontawesome.com/e26f501cbd.js" crossorigin="anonymous"></script>
 
     <!-- Main Styles -->
-    {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/styles.css")) }}
+    {{ require_css(get_asset_url("/_hubspot-module-library/assets/css/styles.css")) }}
 
     <!-- Product Inner Styles -->
-    {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/product-inner-styles.css")) }}
+    {{ require_css(get_asset_url("/_hubspot-module-library/assets/css/product-inner-styles.css")) }}
     
   </head>
   <body>   
     <!-- START HEADER -->
-    {% module "module_16122367791052" path="/_lfc-pinecone-treasury/globals/header", label="header" %}
+    {% module "module_16122367791052" path="/_hubspot-module-library/globals/header", label="header" %}
 
     {% if dynamic_page_hubdb_row %} 
 
@@ -179,7 +179,7 @@
             <h2>Related Posts</h2>
           </div>
         </div>
-        {% module "module_161604024979511" path="/_lfc-pinecone-treasury/modules/related-posts", label="related-posts" %}
+        {% module "module_161604024979511" path="/_hubspot-module-library/modules/related-posts", label="related-posts" %}
       </div> 
 
       <div class="product-inner-similar-products">
@@ -262,6 +262,6 @@
     {{ standard_footer_includes }}
 
     <!-- START Footer -->
-    {% module "module_161587045676311" path="/_lfc-pinecone-treasury/globals/footer", label="footer" %}
+    {% module "module_161587045676311" path="/_hubspot-module-library/globals/footer", label="footer" %}
   </body>
 </html>

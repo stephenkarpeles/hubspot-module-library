@@ -48,10 +48,10 @@ isAvailableForNewContent: true
       label: Blog Listing
       -->
       {#% extends "./layouts/base.html" %#}
-      {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/blog-listing-styles.css")) }}
+      {{ require_css(get_asset_url("/_hubspot-module-library/assets/css/blog-listing-styles.css")) }}
 
       <!-- START HEADER -->
-      {% module "module_16122367791052" path="/_lfc-pinecone-treasury/globals/header", label="header" %}
+      {% module "module_16122367791052" path="/_hubspot-module-library/globals/header", label="header" %}
       <!-- END HEADER -->
       
       <div class="blog-list-featured">
@@ -127,7 +127,7 @@ isAvailableForNewContent: true
       </div>
       {% else %}
 
-      {% module "module_16122372142616" path="/_lfc-pinecone-treasury/modules/blog-filters", label="blog-filters" %}
+      {% module "module_16122372142616" path="/_hubspot-module-library/modules/blog-filters", label="blog-filters" %}
       {% endif %}
       <div class="blog-listing-holder">
         <div class="content-wrapper">
@@ -231,7 +231,7 @@ isAvailableForNewContent: true
       </section>
     
       <!-- START FOOTER -->
-      {% module "module_16122369804984" path="/_lfc-pinecone-treasury/globals/footer", label="footer" %}
+      {% module "module_16122369804984" path="/_hubspot-module-library/globals/footer", label="footer" %}
       <!-- END FOOTER -->
       
       {{ standard_footer_includes }}
