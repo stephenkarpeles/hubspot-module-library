@@ -1,0 +1,26 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 41174891377,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/css/styles.css",
+    "name" : "styles.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/js/jquery.js",
+    "name" : "jquery.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../assets/js/jquery.lazyload.min.js",
+    "name" : "jquery.lazyload.min.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../assets/js/product-filters.js",
+    "name" : "product-filters.js"
+  } ],
+  "label" : "Blog Filters (Pinecone)",
+  "is_available_for_new_content" : true
+}

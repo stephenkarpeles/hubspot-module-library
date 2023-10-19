@@ -1,0 +1,101 @@
+<div class="product-filter-wrapper">
+
+  <div class="container">
+  
+    <div class="product-filter-left-col">
+      <div id="product-filter-ui">
+        <div class="product-filter-ui__section is-open-accordion-container">
+          <h4>Bar Concepts <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="product-filter-ui__option-block">
+            <div>
+              <label class="product-filter-ui__label">Bar Soaps          
+                <input type="checkbox" value=".bar-soaps" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="product-filter-ui__label">Shaving Bars
+                <input type="checkbox" value=".shaving-bars" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>  
+        <div class="product-filter-ui__section is-open-accordion-container">
+          <h4>Soaps <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="product-filter-ui__option-block">
+            <div>
+              <label class="product-filter-ui__label">Bar Soaps          
+                <input type="checkbox" value=".bar-soaps" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="product-filter-ui__label">Shaving Bars
+                <input type="checkbox" value=".shaving-bars" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>  
+        <div class="product-filter-ui__section is-open-accordion-container">
+          <h4>Other Product <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="product-filter-ui__option-block">
+            <div>
+              <label class="product-filter-ui__label">Bar Soaps          
+                <input type="checkbox" value=".bar-soaps" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="product-filter-ui__label">Shaving Bars
+                <input type="checkbox" value=".shaving-bars" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="product-filter-right-col">
+      {# Get Products from HubDB #}
+      {% set table = hubdb_table_rows("products")%}
+
+      {% if table == [] %}
+        <p>Sorry, nothing found for that search. Try changing your filter and search again.</p>
+      {% else %}
+
+      <h2>H2/Product Listing</h2>
+
+      <div class="product-card-container {{ widget.cards_in_row }}">
+        <div class="product-filter-grid-sizer"></div>
+        <div class="product-filter-gutter-sizer"></div>
+        {% for row in table %}
+        <div class="product-card 
+          {% for category in row.category %}
+            {{ category.name|lower|replace(' ','-') }}
+          {% endfor %}
+        "> 
+          <div class="product-card__image">
+            <img src="{{ row.product_image.url }}" width="500" {% if row.image.width > row.image.height  %}class="landscape"{% endif %} alt="{{ row.name }} Headshot">
+          </div>
+          <div class="product-card__info">
+            <h4>{{ row.name }}</h4>
+            <div class="product-card__short-description">
+              {{ row.short_description|truncate(140, True, '...') }}
+            </div>
+            <div class="product-card__link">
+              <a href="/">Learn More</a> <i class="fas fa-chevron-right"></i>
+            </div>
+         </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+    </div>
+
+  </div>
+
+</div>

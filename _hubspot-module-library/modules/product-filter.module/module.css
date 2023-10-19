@@ -1,0 +1,311 @@
+.product-filter-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 0;
+}
+
+.product-filter-wrapper .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-filter-left-col {
+  width: 180px;
+}
+
+.product-filter-right-col {
+  width: calc(100% - 220px);
+}
+
+.product-filter-wrapper::before,
+.product-filter-wrapper::after {
+  position: absolute;
+}
+
+.product-filter-wrapper::before {
+  content: url('https://www.twincraft.com/hubfs/abstract-jagged-green-2.png');
+  left: 5%;
+  bottom: -10px;
+  z-index: 2;
+  display: block;
+}
+
+.product-filter-wrapper::after {
+  content: url('https://www.twincraft.com/hubfs/abstract-jagged-green-1.png');
+  right: 3%;
+  top: 0;
+  z-index: 2;
+  display: block;
+}
+
+.product-card-container {
+  margin: 2rem auto;
+}
+
+/* For use with isotope */
+.product-filter-grid-sizer { 
+  width: 30%; 
+}
+
+/* For use with isotope */
+.product-filter-gutter-sizer { 
+  width: 3.33%; 
+}
+
+.product-card {
+  float: left;
+  width: 30%;
+  height: 560px;
+  box-shadow: 0 5px 15px rgba(33, 63, 101, 0.2);
+  margin-bottom: calc(2 * var(--gutter-width));
+}
+
+.product-card__image img {
+  height: 265px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-card__info {
+  padding: 1.5rem 1.5rem 1.75rem 1.5rem;
+}
+
+.product-card__info h4 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.5;
+}
+
+.product-card__info p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+.product-card__link {
+  margin-top: .75rem;
+}
+
+.product-card__link a,
+.product-card__link i {
+  font-weight: 700;
+  color: var(--link-color-1);
+  transition: .2s ease all;
+}
+
+.product-card__link a:hover {
+  color: var(--link-color-2);
+}
+
+.product-card__link:hover i {
+  color: var(--link-color-2);
+}
+
+.product-card__link i {
+  position: relative;
+  top: 1px;
+  margin-left: 2px;
+}
+
+#product-filter-ui {
+  position: relative;
+  z-index: 20;
+}
+
+#product-filter-ui h4 {
+  color: var(--text-color-main);
+  text-transform: capitalize;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--color-6);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.product-filter-ui__label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.product-filter-ui__label .checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: tranparent;
+  border: 2px solid var(--text-color-main);
+  border-radius: 2px;
+}
+
+.product-filter-ui__label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.product-filter-ui__section {
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.product-filter-ui__section i {
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+.product-filter-ui__section .fa-plus {
+  display: block;
+}
+
+.product-filter-ui__section .fa-minus {
+  display: block;
+}
+
+.product-filter-ui__option-block {
+  transform: scaleY(0);
+  height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.product-filter-ui__section.is-open-accordion-container .product-filter-ui__option-block {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.2s ease; 
+  height: auto;
+  opacity: 1;
+}
+
+.product-filter-ui__section.is-open-accordion-container .fa-minus {
+  display: block;
+}
+
+.product-filter-ui__section.is-open-accordion-container .fa-plus {
+  display: none;
+}
+
+/* On mouse-over, add a grey background color */
+.product-filter-ui__label:hover input ~ .checkmark {
+  transition: background-color .2s ease;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a style if desired */
+.product-filter-ui__label input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.product-filter-ui__label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.product-filter-ui__label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.product-filter-ui__label .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--text-color-main);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1259px) {
+  .product-filter-grid-sizer { 
+    width: 48%; 
+  }
+
+  .product-filter-gutter-sizer { 
+    width: 4%; 
+  }
+
+  .product-card {
+    width: 48%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .product-filter-grid-sizer { 
+    width: 100%; 
+  }
+
+  .product-filter-gutter-sizer { 
+    width: 0%; 
+  }
+
+  .product-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-filter-wrapper .container {
+    flex-direction: column;
+  }
+
+  .product-filter-left-col,
+  .product-filter-right-col {
+    width: 100%;
+  }
+
+  .product-filter-grid-sizer,
+  .product-card { 
+    width: 48%; 
+  }
+
+  .product-filter-gutter-sizer { 
+    width: 4%; 
+  }
+
+  .product-filter-left-col {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .product-filter-wrapper .container {
+    flex-direction: column;
+  }
+
+  .product-filter-left-col,
+  .product-filter-right-col {
+    width: 100%;
+  }
+
+  .product-filter-grid-sizer,
+  .product-card { 
+    width: 100%; 
+  }
+
+  .product-filter-gutter-sizer { 
+    width: 0%; 
+  }
+
+  .product-filter-left-col {
+    margin-bottom: 40px;
+  }
+}

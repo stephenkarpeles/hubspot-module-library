@@ -1,0 +1,267 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+-->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ content.html_title }}</title>
+    <meta name="description" content="{{ content.meta_description }}">
+    {{ standard_header_includes }}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/e26f501cbd.js" crossorigin="anonymous"></script>
+
+    <!-- Main Styles -->
+    {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/styles.css")) }}
+
+    <!-- Product Inner Styles -->
+    {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/product-inner-styles.css")) }}
+    
+  </head>
+  <body>   
+    <!-- START HEADER -->
+    {% module "module_16122367791052" path="/_lfc-pinecone-treasury/globals/header", label="header" %}
+
+    {% if dynamic_page_hubdb_row %} 
+
+      <div class="product-inner-hero">
+        <div class="container">
+          <h1>{{ dynamic_page_hubdb_row.hs_name }}</h1>
+          {{ dynamic_page_hubdb_row.short_description}}
+        </div>
+      </div>
+
+      <div class="product-inner-breadcrumbs">
+        <div class="container">
+          <div class="product-inner-breadcrumbs__back-btn">
+            <a href="/products"><i class="fas fa-chevron-left"></i> Back</a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/">Home <i class="fas fa-chevron-right"></i></a></li>
+              <li><a href="/products">Products <i class="fas fa-chevron-right"></i></a></li>
+              <li><a href="#">{{ dynamic_page_hubdb_row.name}}</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="product-inner-info">
+        <div class="container">
+          <div class="row">
+            <div class="col col-1-2 product-inner-info__col-left">
+              <div class="product-inner__product-image">
+                <img src="{{ dynamic_page_hubdb_row.product_image.url }}" alt="{{ dynamic_page_hubdb_row.product_image.alt }}">
+              </div>
+              {% if dynamic_page_hubdb_row.free_from %}
+                <div class="product-inner__info-block product-inner__info-block--claims-certs">
+                  <h4>H4/Product Claims & Certifications</h4>
+                  <h6>Free From:</h6>
+                  <ul>
+                    {% for item in dynamic_page_hubdb_row.free_from %}
+                      <li>{{item.name}}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+
+              {% if dynamic_page_hubdb_row.certifications %}
+                <div class="product-inner__info-block product-inner__info-block--certifications">
+                  <ul>
+                    {% for item in dynamic_page_hubdb_row.certifications %}
+                      <li>{{item.name}}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+            <div class="col col-1-2 product-inner-info__col-right">
+              <h3>About the Product</h3>
+              {% if dynamic_page_hubdb_row.featured_ingredients %}
+                <div class="product-inner__info-block">
+                  <img src="https://www.twincraft.com/hubfs/blob-vial.png" alt="Icon">
+                  <h4>H4/Featured Ingredients</h4>
+                  {{ dynamic_page_hubdb_row.featured_ingredients }}
+                </div>
+              {% endif %}
+              {% if dynamic_page_hubdb_row.suggested_packaging %}
+                <div class="product-inner__info-block">
+                  <img src="https://www.twincraft.com/hubfs/blob-square.png" alt="Icon">
+                  <h4>H4/Suggested Packaging</h4>
+                  {{ dynamic_page_hubdb_row.suggested_packaging }}
+                </div>
+              {% endif %}
+              {% if dynamic_page_hubdb_row.library_base %}
+                <div class="product-inner__info-block">
+                  <img src="https://www.twincraft.com/hubfs/blob-book.png" alt="Icon">
+                  <h4>H4/Library Base</h4>
+                  {{ dynamic_page_hubdb_row.library_base }}
+                </div>
+              {% endif %}
+              {% if dynamic_page_hubdb_row.naturally_derived %}
+                <div class="product-inner__info-block">
+                  <img src="https://www.twincraft.com/hubfs/blob-seed.png" alt="Icon">
+                  <h4>H4/Naturally Derived</h4>
+                  {{ dynamic_page_hubdb_row.naturally_derived }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-inner-value-stack">
+        <div class="container">
+          <div class="product-inner-value-stack__intro">
+            <h2>H2/Services Stack</h2>
+            <p>Describe how you can help the user with their biggest pain points. Explain how you will be their partner and how this will positively impact their business. </p>
+          </div>
+
+          <div class="row">
+            <div class="col col-1-2">
+              <div class="product-inner-value-stack__item">
+                <div class="icon">
+                  <img src="https://www.twincraft.com/hubfs/Value%20Stack%20-%20Icon%201@2x.svg" alt="">
+                </div>
+                <div class="text">
+                  <h4>H4/Service Stack Title</h4>
+                  <p>In one to two sentences, describe this value stack. You want to user to identify with this value and click the CTA at the bottom of the section.</p>
+                </div>
+              </div>
+              <div class="product-inner-value-stack__item">
+                <div class="icon">
+                  <img src="https://www.twincraft.com/hubfs/Value%20Stack%20-%20Icon%202@2x.svg" alt="">
+                </div>
+                <div class="text">
+                  <h4>H4/Service Stack Title</h4>
+                  <p>In one to two sentences, describe this value stack. You want to user to identify with this value and click the CTA at the bottom of the section.</p>
+                </div>
+              </div>
+              <div class="product-inner-value-stack__item">
+                <div class="icon">
+                  <img src="https://www.twincraft.com/hubfs/Value%20Stack%20-%20Icon%203@2x.svg" alt="">
+                </div>
+                <div class="text">
+                  <h4>H4/Service Stack Title</h4>
+                  <p>In one to two sentences, describe this value stack. You want to user to identify with this value and click the CTA at the bottom of the section.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-1-2">
+              <div class="product-inner-value-stack__feat-image">
+                <img src="https://www.twincraft.com/hubfs/Bar%20Lab-4.png" alt="Value">
+              </div>
+            </div>
+          </div>
+          <div class="row row--justify-content-center">
+            <div class="col col-full-width justify-content-center">
+              <div class="product-inner-value-stack__btn-block">         
+                
+                <a href="https://www.twincraft.com/contact-us" class="btn btn--1">
+                  <span>Let's Work Together</span>
+                </a> 
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="product-inner-related-posts">
+        <div class="container">
+          <div class="product-inner-related-posts__intro">
+            <h2>Related Posts</h2>
+          </div>
+        </div>
+        {% module "module_161604024979511" path="/_lfc-pinecone-treasury/modules/related-posts", label="related-posts" %}
+      </div> 
+
+      <div class="product-inner-similar-products">
+        <div class="container">
+          <div class="product-inner-similar-products__intro">
+            <h2>Similar Products</h2>
+          </div>
+          <div class="row">
+            <div class="col col-1-4">
+              <div class="product-inner__similar-product">
+                <img src="https://www.twincraft.com/hubfs/Creamy%20Clay%20Mask%203%20edited.png" alt="Product Name">
+                <div class="product-inner__similar-product-text">
+                  <h4>H4/Product Name</h4>
+                  <a href="/">Learn More<i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-1-4">
+              <div class="product-inner__similar-product">
+                <img src="https://www.twincraft.com/hubfs/Creamy%20Clay%20Mask%203%20edited.png" alt="Product Name">
+                <div class="product-inner__similar-product-text">
+                  <h4>H4/Product Name</h4>
+                  <a href="/">Learn More<i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-1-4">
+              <div class="product-inner__similar-product">
+                <img src="https://www.twincraft.com/hubfs/Creamy%20Clay%20Mask%203%20edited.png" alt="Product Name">
+                <div class="product-inner__similar-product-text">
+                  <h4>H4/Product Name</h4>
+                  <a href="/">Learn More<i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col col-1-4">
+              <div class="product-inner__similar-product">
+                <img src="https://www.twincraft.com/hubfs/Creamy%20Clay%20Mask%203%20edited.png" alt="Product Name">
+                <div class="product-inner__similar-product-text">
+                  <h4>H4/Product Name</h4>
+                  <a href="/">Learn More<i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <section class="hero hero--centered" style="background-image: url('https://www.twincraft.com/hubfs/homepage-hero-1.jpg');">
+        <div class="container">
+          <div class="row">
+            <div class="col col-3-4">
+              <div class="hero__content">
+                
+                <h1 class="hero__heading">It’s Time <span>to Come Clean</span></h1>
+              
+                <h4 class="hero__subheading">Got an idea for a deodorant that goes all day? Feel-good skincare products? Unbelievable bar soaps? We want to hear about what you’re working on and how we can help get your product in (and on) the hands of your customers.</h4>
+                 
+              </div>
+              <div class="hero__btn-block">         
+                
+                <a href="https://www.twincraft.com/contact-us" class="btn btn--1">
+                  <span>Let's Work Together</span>
+                </a> 
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+    {% elif dynamic_page_hubdb_table_id %}
+        <ul>
+        {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+            <li><a href="{{ request.path }}/{{ row.hs_path }}">{{ row.hs_name }}</a></li>                
+        {% endfor %}
+        </ul>
+    {% endif %}    
+    {{ standard_footer_includes }}
+
+    <!-- START Footer -->
+    {% module "module_161587045676311" path="/_lfc-pinecone-treasury/globals/footer", label="footer" %}
+  </body>
+</html>

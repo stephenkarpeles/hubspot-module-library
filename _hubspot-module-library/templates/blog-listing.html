@@ -1,0 +1,278 @@
+<!--
+templateType: "blog"
+label: "Blog Listing"
+isAvailableForNewContent: true
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page_meta.html_title }}</title>
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {#{ require_css(get_asset_url("../../css/layout.css")) }#}
+    {#{ require_css(get_asset_url("../../css/main.css")) }#}
+    
+    {# where possible, improve page performance and speed by combining external http requests to reduce your
+      overall number of calls -- here, you can use a single call to the gFonts api to get all the fonts you need
+      https://developers.google.com/fonts/docs/getting_started
+    #}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/e26f501cbd.js" crossorigin="anonymous"></script>
+
+    <!-- Slick Slider Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    {# Include Theme Overrides #}
+    {#{ require_js(get_asset_url("../../js/main.js")) }#}
+    {{ standard_header_includes }}
+    {#{ require_css(get_asset_url("../../css/theme-overrides.css")) }#}
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/e26f501cbd.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+      {% set my_topics = blog_topics('group.id', 200) %}
+      {% set topic_posts = blog_recent_posts('group.id', 1) %}
+      {% set category = request.query_dict.category %}
+      {% set industry = request.query_dict.industry %}
+
+      <!--
+      templateType: blog
+      isAvailableForNewContent: true
+      label: Blog Listing
+      -->
+      {#% extends "./layouts/base.html" %#}
+      {{ require_css(get_asset_url("/_lfc-pinecone-treasury/assets/css/blog-listing-styles.css")) }}
+
+      <!-- START HEADER -->
+      {% module "module_16122367791052" path="/_lfc-pinecone-treasury/globals/header", label="header" %}
+      <!-- END HEADER -->
+      
+      <div class="blog-list-featured">
+        <div class="container">
+          {% for content in topic_posts %}
+          {% if loop.index == 1 %}
+          <div class="dis-flex">
+            <div class="featured-item-content">
+              <div class="feature-title">
+                Featured Post
+              </div>
+              <h2><a href="{{content.absolute_url}}">{{ content.name }}</a></h2>
+              <ul class="dis-flex date">
+                <li><span>{{ content.publish_date|datetimeformat('%B %e, %Y') }} </span></li>
+              </ul>
+              <div class="detail-content">
+                {{ content.meta_description|truncate(150, true, '...') }}            
+              </div>
+              <ul class="dis-flex topics">
+                <li><span class="author-label">By:</span></li>        
+                <li><a class="author-link" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_post_author.display_name }}</a>{% if content.topic_list %}|{% endif %}</li>
+                {% for topic in content.topic_list %}
+                <li>
+                  <a class="author-link" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>{% if not loop.last %}|{% endif %} 
+                </li>
+                {% endfor %}
+              </ul>
+              <a class="btn btn--2" href="{{content.absolute_url}}"><span>Read More</span></a>
+            </div>
+            <div class="featured-item-image">
+              <div class="img-box">
+                <img src="{{ content.post_list_summary_featured_image }}" class="featured-image" alt="{{ content.featured_image_alt_text | escape }}">
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% if blog_author %}
+      <div class="blog-header">
+        <div class="blog-header__inner">
+          {% if blog_author.avatar %}
+          <div class="blog-header__author-avatar" style="background-image: url('{{ blog_author.avatar }}');"></div>
+          {% endif %}
+          <h1 class="blog-header__title">{{ blog_author.display_name }}</h1>
+          <h4 class="blog-header__subtitle">{{ blog_author.bio }}</h4>
+          {% if blog_author.has_social_profiles %}
+          <div class="blog-header__author-social-links">
+            {% if blog_author.website %}
+            <a href="{{ blog_author.website }}" target="_blank">
+              {% icon name="link" style="SOLID" width="10" %}
+            </a>
+            {% endif %}
+            {% if blog_author.facebook %}
+            <a href="{{ blog_author.facebook }}" target="_blank">
+              {% icon name="facebook-f" style="SOLID" width="10" %}
+            </a>
+            {% endif %}
+            {% if blog_author.linkedin %}
+            <a href="{{ blog_author.linkedin }}" target="_blank">
+              {% icon name="linkedin-in" style="SOLID" width="10" %}
+            </a>
+            {% endif %}
+            {% if blog_author.twitter %}
+            <a href="{{ blog_author.twitter }}" target="_blank">
+              {% icon name="twitter" style="SOLID" width="10" %}
+            </a>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+
+      {% module "module_16122372142616" path="/_lfc-pinecone-treasury/modules/blog-filters", label="blog-filters" %}
+      {% endif %}
+      <div class="blog-listing-holder">
+        <div class="content-wrapper">
+          <div class="blogs-list__list">
+            <div class="row clear-columns">
+              <div class="blog__grid-sizer"></div>
+              <div class="blog__gutter-sizer"></div>
+              {% for content in contents %}
+              {% if loop.index == 7 %}
+              <div class="cta-frame">
+                
+              </div>
+              {% endif %}
+              
+                <div class="flex justify-content-center blog-post-item {% for topic in content.topic_list %}{{ topic.slug }} {% endfor %}">              
+                  {% if not simple_list_page %}
+                  <div class="blogs-list__post">
+                    {% if content.featured_image %}
+                    <span class="blogs-list__post-image-wrap">
+                      <img class="blogs-list__post-image" src="{{ content.featured_image }}" loading="lazy" alt="{{ content.name|striptags }}">
+                    </span>
+
+                    {% endif %}
+                    {% set day = content.publish_date_local_time.strftime('%e') %}
+                    {% if day >= 4 and day <= 20 %}
+                    {% set day = day + "th" %}
+                    {% elif day >= 24 and day <= 30 %}
+                    {% set day = day + "th" %}
+                    {% elif day == 1 or day == 21 or day == 31 %}
+                    {% set day = day + "st" %}
+                    {% elif day == 2 or day == 22 %}
+                    {% set day = day + "nd" %}
+                    {% elif day == 3 or day == 23 %}
+                    {% set day = day + "rd" %}
+                    {% endif %}
+                    <span class="blogs-list__post-date">{{ content.publish_date_local_time.strftime('%B') }} {{ day }}, {{ content.publish_date_local_time.strftime('%Y') }}</span>
+                    <h3 class="blogs-list__post-title"><a href="{{content.absolute_url}}">{{ content.name }}</a><!--  {{ content.widgets.type_of_page.body.value }} --></h3>
+                   
+                    <div class="description-holder">
+                      <p id="hubspot-author_data" class="hubspot-editable" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+                        {% if content.topic_list %}
+                        {% for topic in content.topic_list %}
+                        <a class="topic-link" href="{{ group.absolute_url }}/topic/{{ topic.slug }}">{{ topic.name }}</a>{% if not loop.last %}<em></em>{% endif %}
+                        {% endfor %}
+                        {% endif %}
+                      </p>
+                      <div class="post-body clearfix">
+                        <!--post summary-->
+                        {{ content.post_list_content|truncatehtml(140, "...")|safe|striptags }}
+                      </div>
+                    </div>
+                    <a href="{{content.absolute_url}}" class="blogs-list__post-more">Read More 
+                    </a>
+                  </div>
+                  {% else %}
+                  <h2 class="post-listing-simple"><a href="{{content.absolute_url}}">{{ content.name }}</a></h2>
+                  {% endif %}
+                </div>
+
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- {% if not simple_list_page %}
+          <div class="blog-pagination dis-flex"> 
+            {% if last_page_num %}
+            <a class="previous-posts-link" href="{{ content.absolute_url }}">Newer</a>
+            {% endif %}
+            <div class="middle-pagination dis-flex">
+              <span class="left-number">{{ current_page_num }}</span> <span class="middle-of">of</span> {{ contents.total_page_count }}
+            </div>  
+            {% if next_page_num %}
+            <a class="next-posts-link" href="{{ content.absolute_url }}">Older</a>
+            {% endif %}
+          </div>
+          {% endif %} -->
+        </div>
+      </div>
+    
+      <section class="hero hero--centered" style="background-image: url('https://www.twincraft.com/hubfs/homepage-hero-1.jpg');">
+        <div class="container">
+          <div class="row">
+            <div class="col col-3-4">
+              <div class="hero__content">
+                
+                <h1 class="hero__heading">It’s Time <span>to Come Clean</span></h1>
+              
+                <h4 class="hero__subheading">Got an idea for a deodorant that goes all day? Feel-good skincare products? Unbelievable bar soaps? We want to hear about what you’re working on and how we can help get your product in (and on) the hands of your customers.</h4>
+                 
+              </div>
+              <div class="hero__btn-block">         
+                
+                <a href="https://www.twincraft.com/contact-us" class="btn btn--1">
+                  <span>Let's Work Together</span>
+                </a> 
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- START FOOTER -->
+      {% module "module_16122369804984" path="/_lfc-pinecone-treasury/globals/footer", label="footer" %}
+      <!-- END FOOTER -->
+      
+      {{ standard_footer_includes }}
+  </body>
+</html>
+      
+{% require_js %}
+<script>
+  $(document).ready(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 500);
+          return false;
+        }
+      }
+    });
+  });
+
+</script>
+<script>
+  $(window).on('load', function(){
+    $('.filter-option').on('change', function(){
+      var filter = $(this).find("option:selected").attr('value');
+      window.location.replace(filter);
+    });
+  });
+</script>
+<script>
+  $('.post-body p').each(function() {
+    if ($(this).text().trim().length == 0) {
+    $(this).remove()
+    }
+  });
+</script>
+
+{% end_require_js %}
+      
+      
+

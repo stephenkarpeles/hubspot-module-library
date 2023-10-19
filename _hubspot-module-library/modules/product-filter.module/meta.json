@@ -1,0 +1,26 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 41619181656,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/css/styles.css",
+    "name" : "styles.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/js/jquery.js",
+    "name" : "jquery.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../assets/js/slick.js",
+    "name" : "slick.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../assets/js/product-filters.js",
+    "name" : "product-filters.js"
+  } ],
+  "label" : "Product Filter (Pinecone)",
+  "is_available_for_new_content" : true
+}

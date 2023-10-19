@@ -1,0 +1,509 @@
+.dye-filter-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 10rem 0 8rem;
+}
+
+.dye-filter-wrapper .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dye-filter-left-col {
+  width: 180px;
+}
+
+.dye-filter-right-col {
+  width: calc(100% - 240px);
+}
+
+.dye-filter-wrapper::before,
+.dye-filter-wrapper::after {
+  position: absolute;
+}
+
+.dye-filter-wrapper::before {
+  content: url('https://www.twincraft.com/hubfs/abstract-jagged-green-2.png');
+  left: 5%;
+  bottom: -10px;
+  z-index: 2;
+  display: block;
+}
+
+.dye-filter-wrapper::after {
+  content: url('https://www.twincraft.com/hubfs/abstract-jagged-green-1.png');
+  right: 3%;
+  top: 0;
+  z-index: 2;
+  display: block;
+}
+
+.dye-card-container {
+  margin: 0 auto 2rem;
+}
+
+/* For use with isotope */
+.dye-filter-grid-sizer { 
+  width: 100%; 
+}
+
+/* For use with isotope */
+.dye-filter-gutter-sizer { 
+  width: 0%; 
+}
+
+.dye-card {
+  float: left;
+  position: relative;
+  z-index: 100;
+  padding: 30px 35px;
+  display: flex;
+  justify-self: space-between;
+  width: 100%;
+  height: auto;
+  background: #F7F8FC;
+  box-shadow: 0 5px 15px rgba(33, 63, 101, 0.2);
+  margin-bottom: calc(2 * var(--gutter-width));
+}
+
+.dye-card__image {
+  width: 300px;
+}
+
+.dye-card__image img {
+  height: 260px;
+  width: 260px;
+  object-fit: cover;
+}
+
+.dye-card__info {
+  width: calc(100% - 300px);
+  padding: 0;  
+}
+
+.dye-card__info-col-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dye-card__info-left-col,
+.dye-card__info-right-col {
+  width: calc(50% - 20px);
+}
+
+.dye-card__info h4 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.5;
+}
+
+.dye-card__info p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+.dye-card__info ul {
+  margin: 0;
+  padding: 0;
+}
+
+.dye-card__info li {
+  position: relative;
+  list-style-type: none;
+  margin-bottom: 18px;
+  padding-left: 26px;
+}
+
+.dye-card__info li i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--link-color-1);
+}
+
+.dye-card__link {
+  margin-top: .75rem;
+}
+
+.dye-card__link a,
+.dye-card__link i {
+  font-weight: 700;
+  color: var(--link-color-1);
+  transition: .2s ease all;
+}
+
+.dye-card__link a:hover {
+  color: var(--link-color-2);
+}
+
+.dye-card__link:hover i {
+  color: var(--link-color-2);
+}
+
+.dye-card__link i {
+  position: relative;
+  top: 1px;
+  margin-left: 2px;
+}
+
+#dye-filter-ui {
+  position: relative;
+  z-index: 300;
+}
+
+#dye-filter-ui h4 {
+  color: var(--text-color-main);
+  text-transform: capitalize;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--color-6);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.dye-filter-ui__label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.dye-filter-ui__label .checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: tranparent;
+  border: 2px solid var(--text-color-main);
+  border-radius: 2px;
+}
+
+.dye-filter-ui__label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dye-filter-ui__section {
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.dye-filter-ui__section i {
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+.dye-filter-ui__section .fa-plus {
+  display: block;
+}
+
+.dye-filter-ui__section .fa-minus {
+  display: block;
+}
+
+.dye-filter-ui__option-block {
+  transform: scaleY(0);
+  height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.dye-filter-ui__section.is-open-accordion-container .dye-filter-ui__option-block {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.2s ease; 
+  height: auto;
+  opacity: 1;
+}
+
+.dye-filter-ui__section.is-open-accordion-container .fa-minus {
+  display: block;
+}
+
+.dye-filter-ui__section.is-open-accordion-container .fa-plus {
+  display: none;
+}
+
+/* On mouse-over, add a grey background color */
+.dye-filter-ui__label:hover input ~ .checkmark {
+  transition: background-color .2s ease;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a style if desired */
+.dye-filter-ui__label input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.dye-filter-ui__label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.dye-filter-ui__label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.dye-filter-ui__label .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--text-color-main);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dye-filter-action-block {
+  margin-top: -50px;
+  padding-bottom: 50px;
+}
+
+.dye-filter-action-block ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.dye-filter-action-block li {
+  margin-right: 30px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 25px;
+}
+
+.dye-filter-action-block a {
+  color: var(--link-color-1);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dye-filter-action-block i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.dye-card__close-btn {
+  position: absolute;
+  right: 30px;
+  top: 12px;
+  font-size: 22px;
+  color: var(--link-color-1);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.dye-card__close-btn:hover {
+  opacity: .8;
+  transition: all .3s ease;
+}
+
+/* Hero Overrides */
+.hero {
+  padding: 5.5rem 0 4rem;
+}
+
+@media screen and (max-width: 1259px) {
+  /*.dye-filter-grid-sizer { 
+    width: 48%; 
+  }
+
+  .dye-filter-gutter-sizer { 
+    width: 4%; 
+  }
+
+  .dye-card {
+    width: 48%;
+    margin-bottom: 30px;
+  }*/
+}
+
+@media screen and (max-width: 1199px) {
+  .dye-card__image {
+    width: 230px;
+  }
+
+  .dye-card__image img {
+    height: 190px;
+    width: 190px;
+    object-fit: cover;
+  }
+
+  .dye-card__info {
+    width: calc(100% - 230px);
+    padding: 0;  
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .dye-filter-grid-sizer { 
+    width: 100%; 
+  }
+
+  .dye-filter-gutter-sizer { 
+    width: 0%; 
+  }
+
+  .dye-card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .dye-card__image {
+    width: 100%;
+    padding-bottom: 25px;
+  }
+
+  .dye-card__image img {
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+  }
+
+  .dye-card__info {
+    width: 100%;
+    padding: 0;  
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 4.5rem 0 3rem;
+  }
+
+  .dye-filter-wrapper .container {
+    flex-direction: column;
+  }
+
+  .dye-filter-left-col,
+  .dye-filter-right-col {
+    width: 100%;
+  }
+
+  /*.dye-filter-grid-sizer,
+  .dye-card { 
+    width: 48%; 
+  }
+
+  .dye-filter-gutter-sizer { 
+    width: 4%; 
+  }
+
+  .dye-filter-left-col {
+    margin-bottom: 40px;
+  }*/
+
+  .dye-card__image img {
+    height: 210px;
+    width: 210px;
+    object-fit: cover;
+  }
+
+  .dye-filter-action-block {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .dye-card__info-col-wrap {
+    flex-direction: column;
+  }
+
+  .dye-card__info-left-col,
+  .dye-card__info-right-col {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .dye-filter-wrapper .container {
+    flex-direction: column;
+  }
+
+  .dye-filter-left-col,
+  .dye-filter-right-col {
+    width: 100%;
+  }
+
+  .dye-filter-grid-sizer,
+  .dye-card { 
+    width: 100%; 
+  }
+
+  .dye-filter-gutter-sizer { 
+    width: 0%; 
+  }/*
+
+  .dye-filter-left-col {
+    margin-bottom: 40px;
+  }*/
+}
+
+/* Print Styles */
+@media print {
+  .dye-filter-left-col,
+  .dye-filter-action-block,
+  .dye-filter-wrapper::before,
+  .dye-filter-wrapper::after {
+    display: none;
+  }
+
+  .dye-card {
+    page-break-inside: avoid;
+    margin-bottom: 50px;
+  }
+
+  .dye-filter-wrapper {
+    padding: 2rem 0 6rem;
+  }
+  
+  .dye-filter-right-col {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .hero h1.hero__heading {
+    font-size: 30px;
+  }
+
+  .dye-card__image {
+    width: 200px;
+  }
+
+  .dye-card__image img {
+    height: 170px;
+    width: 170px;
+    object-fit: cover;
+  }
+
+  .dye-card__info {
+    width: calc(100% - 200px);
+    padding: 0;  
+  }
+}

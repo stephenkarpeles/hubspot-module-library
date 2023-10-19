@@ -1,0 +1,189 @@
+<div class="dye-filter-wrapper">
+
+  <div class="container">
+  
+    <div class="dye-filter-left-col">
+      <div id="dye-filter-ui">
+        <div class="dye-filter-ui__section is-open-accordion-container">
+          <h4>Parting Line <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="dye-filter-ui__option-block">
+            <div>
+              <label class="dye-filter-ui__label">Center          
+                <input type="checkbox" value=".parting-line-center" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">High
+                <input type="checkbox" value=".parting-line-high" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>  
+        <div class="dye-filter-ui__section is-open-accordion-container">
+          <h4>Cavities <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="dye-filter-ui__option-block">
+            <div>
+              <label class="dye-filter-ui__label">1          
+                <input type="checkbox" value=".cavities-1" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">2
+                <input type="checkbox" value=".cavities-2" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">3
+                <input type="checkbox" value=".cavities-3" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">4
+                <input type="checkbox" value=".cavities-4" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">5
+                <input type="checkbox" value=".cavities-5" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>  
+        <div class="dye-filter-ui__section is-open-accordion-container">
+          <h4>Shape <i class="fas fa-plus"></i><i class="fas fa-minus"></i></h4>
+          <div class="dye-filter-ui__option-block">
+            <div>
+              <label class="dye-filter-ui__label">Oval          
+                <input type="checkbox" value=".shape-oval" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">Round
+                <input type="checkbox" value=".shape-round" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label class="dye-filter-ui__label">Saddle
+                <input type="checkbox" value=".shape-saddle" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="dye-filter-right-col">
+      <div class="dye-filter-action-block">
+        <ul>
+          <li><a href="javascript:window.print();"><i class="fas fa-print"></i> Print Version</a></li>
+          <li><a id="dye-filter-generate-pdf"><i class="fas fa-file-pdf"></i> Download as PDF</a></li>
+        </ul>
+      </div>
+
+      {# Get Dyes from HubDB #}
+      {% set table = hubdb_table_rows("dye_catalog")%}
+
+      {% if table == [] %}
+        <p>Sorry, nothing found for that search. Try changing your filter and search again.</p>
+      {% else %}
+
+      <div id="dye-card-list-wrapper" class="dye-card-container {{ widget.cards_in_row }}">
+        <div class="dye-filter-grid-sizer"></div>
+        <div class="dye-filter-gutter-sizer"></div>
+        {% for row in table %}
+        <div class="dye-card 
+          {% for parting_line in row.parting_line %}
+            parting-line-{{ parting_line.name|lower|replace(' ','-') }}
+          {% endfor %}
+          
+          cavities-{{ row.cavities }}
+
+          {% for shape in row.shape %}
+            shape-{{ shape.name|lower|replace(' ','-') }}
+          {% endfor %}
+        "> 
+          <div class="dye-card__image">
+            <img src="{{ row.image.url }}" width="500" {% if row.image.width > row.image.height  %}class="landscape"{% endif %} alt="{{ row.name }}">
+          </div>
+          <div class="dye-card__info">
+            <div class="dye-card__close-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <h4>{{ row.die }}</h4>
+            <div class="dye-card__info-col-wrap">
+              <div class="dye-card__info-left-col">                
+                <ul>
+                  {% if row.prefix %}
+                    <li><i class="fas fa-check-circle"></i><strong>Prefix</strong>: {{ row.prefix }}</li>
+                  {% endif %}
+                  {% if row.die %}
+                    <li><i class="fas fa-check-circle"></i><strong>Die</strong>: {{ row.die }}</li>
+                  {% endif %}
+                  {% if row.cavities %}
+                    <li><i class="fas fa-check-circle"></i><strong>Cavities</strong>: {{ row.cavities }}</li>
+                  {% endif %}                  
+                  {% if row.label_weight_oz %}
+                    <li><i class="fas fa-check-circle"></i><strong>Weight (OZ)</strong>: {{ row.label_weight_oz }}</li>
+                  {% endif %}
+                  {% if row.label_weight_g %}
+                    <li><i class="fas fa-check-circle"></i><strong>Weight (G)</strong>: {{ row.label_weight_g }}</li>
+                  {% endif %}
+                  {% if row.syndet_label_weight_oz %}
+                    <li><i class="fas fa-check-circle"></i><strong>Syndet Label Weight (OZ)</strong>: {{ row.syndet_label_weight_oz }}</li>
+                  {% endif %}
+                  {% if row.syndet_label_weight_g %}
+                    <li><i class="fas fa-check-circle"></i><strong>Syndet Label Weight (G)</strong>: {{ row.syndet_label_weight_g }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="dye-card__info-right-col">
+                <ul>
+                  {% if row.parting_line %}
+                    <li>                    
+                        <i class="fas fa-check-circle"></i><strong>Parting Line</strong>: {% for parting_line in row.parting_line %}{{ parting_line.name }} {% endfor %}
+                    </li>
+                  {% endif %}
+                  {% if row.blank_insert %}
+                    <li> 
+                        <i class="fas fa-check-circle"></i><strong>Blank Insert</strong>: {% for blank_insert in row.blank_insert %}{{ blank_insert.name }} {% endfor %}
+                    </li>
+                  {% endif %}
+                  {% if row.shape %}
+                    <li> 
+                      <i class="fas fa-check-circle"></i><strong>Shape</strong>: {% for shape in row.shape %}{{ shape.name }} {% endfor %}
+                    </li>
+                  {% endif %}  
+
+                </ul>
+              </div>
+            </div> 
+            <div class="dye-card__short-description">
+              <ul>
+                <li>
+                  {% if row.comments %}
+                    <i class="fas fa-check-circle"></i><strong>Comments</strong>: {{ row.comments|truncate(140, True, '...') }}
+                  {% endif %}
+                </li>
+              </ul>              
+            </div>           
+         </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+<div class="filter-section blog-filter-wrap">
+  <div class="container">
+    <div class="dis-flex">
+      
+      <label>Filter by:</label>
+      <div class="order-filter" style="display: none">
+        <select class="topics filter-option filter-option-ind filterSelector"  id="blog-sort" name="contenttype">
+
+          <option value="selected">Persona</option>
+<!--           <option value="https://www.weatherlyinn.com/blog/topic/video">Video</option>
+           <option value="https://www.weatherlyinn.com/blog/topic/article">Articles</option> -->
+        </select>
+      </div>
+      <div class="topic-filter filters">
+
+        <select class="topics filters-select" id="blog-topics" name="tags" value-group="color">
+          <option value="*" {% if not topic %}selected{% endif %}>Topic</option>
+          {% set my_topics = blog_topics('default', 250) %}
+          {% for item in my_topics  %}  
+            <option value=".{{ item.slug }}" {% if item.slug ==  topic %}selected{% endif %} >{{ item }}</option>
+          {% endfor %}
+        </select>
+        
+      </div>
+      
+      <!-- <div class="order-filter">
+        <select class="topics filter-option filter-option-ind filterSelector"  id="blog-sort" name="contenttype">
+          
+          <option value="" hidden>Content Type</option>
+          <option value="https://www.prairieviewpartners.com/blog">All</option>
+          <option value="https://www.prairieviewpartners.com/blog/tag/video">Video</option>
+          <option value="https://www.prairieviewpartners.com/blog/tag/press-release">Press Release</option>
+           <option value="https://www.prairieviewpartners.com/blog/tag/case-study">Case Study</option>
+        </select>
+      </div> -->
+     <!--[if lte IE 8]>
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+      <![endif]-->
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+      <a href="/" class="btn btn--1 btn--subscribe"><span>Subscribe</span></a>
+    </div>         
+  </div>
+</div>
+
